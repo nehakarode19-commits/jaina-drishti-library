@@ -33,13 +33,13 @@ const Header = () => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent">
+              <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-gold">
                 About Us
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuContent className="bg-white shadow-lg border border-border">
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
-                    <Link to="/about" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
+                    <Link to="/about" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
                       About
                     </Link>
                   </NavigationMenuLink>
@@ -48,13 +48,13 @@ const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent">
+              <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-gold">
                 Donation
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuContent className="bg-white shadow-lg border border-border">
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
-                    <Link to="/donate" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
+                    <Link to="/donate" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
                       Donate Now
                     </Link>
                   </NavigationMenuLink>
@@ -63,18 +63,18 @@ const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent">
+              <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-gold">
                 Request
               </NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuContent className="bg-white shadow-lg border border-border">
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
-                    <Link to="/request-book" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
+                    <Link to="/request-book" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
                       Request New Book
                     </Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
-                    <Link to="/request-upload" className="block px-4 py-2 text-sm hover:bg-accent rounded-md">
+                    <Link to="/request-upload" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
                       Upload Request
                     </Link>
                   </NavigationMenuLink>
