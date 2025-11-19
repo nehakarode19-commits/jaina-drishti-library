@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -8,25 +8,118 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
+import { z } from "zod";
+
+const loginSchema = z.object({
+  email: z.string().email("Please enter a valid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+});
+
+const signupSchema = z.object({
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
+  email: z.string().email("Please enter a valid email address"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+  confirmPassword: z.string().min(6, "Confirm your password"),
+});
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
-    // Authentication logic will be added later
-    setTimeout(() => setIsLoading(false), 1000);
+
+    const formData = new FormData(e.currentTarget);
+    const values = {
+      email: String(formData.get("login-email") || ""),
+      password: String(formData.get("login-password") || ""),
+    };
+
+    const parsed = loginSchema.safeParse(values);
+    if (!parsed.success) {
+      const message = parsed.error.issues[0]?.message ?? "Invalid login details";
+      toast({ title: "Login failed", description: message, variant: "destructive" });
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      const { error } = await supabase.auth.signInWithPassword({
+        email: parsed.data.email,
+        password: parsed.data.password,
+      });
+
+      if (error) {
+        toast({ title: "Login failed", description: error.message, variant: "destructive" });
+        return;
+      }
+
+      toast({ title: "Signed in", description: "Welcome back to Jain eLibrary." });
+      navigate("/", { replace: true });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const handleSignup = (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true);
-    // Authentication logic will be added later
-    setTimeout(() => setIsLoading(false), 1000);
-  };
 
-  return (
+    const formData = new FormData(e.currentTarget);
+    const values = {
+      firstName: String(formData.get("signup-first-name") || ""),
+      lastName: String(formData.get("signup-last-name") || ""),
+      email: String(formData.get("signup-email") || ""),
+      password: String(formData.get("signup-password") || ""),
+      confirmPassword: String(formData.get("signup-confirm-password") || ""),
+    };
+
+    const parsed = signupSchema.safeParse(values);
+    if (!parsed.success) {
+      const message = parsed.error.issues[0]?.message ?? "Invalid signup details";
+      toast({ title: "Sign up failed", description: message, variant: "destructive" });
+      return;
+    }
+
+    if (parsed.data.password !== parsed.data.confirmPassword) {
+      toast({ title: "Sign up failed", description: "Passwords do not match", variant: "destructive" });
+      return;
+    }
+
+    try {
+      setIsLoading(true);
+      const redirectUrl = `${window.location.origin}/`;
+
+      const { error } = await supabase.auth.signUp({
+        email: parsed.data.email,
+        password: parsed.data.password,
+        options: {
+          emailRedirectTo: redirectUrl,
+          data: {
+            first_name: parsed.data.firstName,
+            last_name: parsed.data.lastName,
+          },
+        },
+      });
+
+      if (error) {
+        toast({ title: "Sign up failed", description: error.message, variant: "destructive" });
+        return;
+      }
+
+      toast({
+        title: "Check your email",
+        description: "We’ve sent you a confirmation link to complete your registration.",
+      });
+
+      navigate("/", { replace: true });
+    } finally {
+      setIsLoading(false);
+    }
+  };
     <div className="min-h-screen flex flex-col">
       <Header />
       
