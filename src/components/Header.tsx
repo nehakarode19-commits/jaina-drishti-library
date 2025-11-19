@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, Book, Home, ShoppingCart, Heart, User } from "lucide-react";
+import { Search, Book, Home, ShoppingCart, Heart, User, MessageSquare, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -29,6 +29,14 @@ const Header = () => {
           <Link to="/bookstore" className="px-4 py-2 text-sm font-medium transition-all duration-200 hover:text-primary hover:bg-primary-light rounded-lg flex items-center gap-2">
             <ShoppingCart className="h-4 w-4" />
             Bookstore
+          </Link>
+          <Link to="/about" className="px-4 py-2 text-sm font-medium transition-all duration-200 hover:text-primary hover:bg-primary-light rounded-lg flex items-center gap-2">
+            <Info className="h-4 w-4" />
+            About
+          </Link>
+          <Link to="/feedback" className="px-4 py-2 text-sm font-medium transition-all duration-200 hover:text-primary hover:bg-primary-light rounded-lg flex items-center gap-2">
+            <MessageSquare className="h-4 w-4" />
+            Feedback
           </Link>
           <Link to="/donate" className="px-4 py-2 text-sm font-medium transition-all duration-200 hover:text-burgundy hover:bg-burgundy/5 rounded-lg flex items-center gap-2">
             <Heart className="h-4 w-4" />
