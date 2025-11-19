@@ -40,7 +40,17 @@ const Header = () => {
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
                     <Link to="/about" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
-                      About
+                      About us
+                    </Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link to="/committee" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
+                      Committee
+                    </Link>
+                  </NavigationMenuLink>
+                  <NavigationMenuLink asChild>
+                    <Link to="/contact" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
+                      Contact us
                     </Link>
                   </NavigationMenuLink>
                 </div>
