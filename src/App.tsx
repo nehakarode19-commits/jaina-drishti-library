@@ -13,6 +13,8 @@ import Donate from "./pages/Donate";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import About from "./pages/About";
+import Committee from "./pages/Committee";
+import ContactUs from "./pages/ContactUs";
 import Feedback from "./pages/Feedback";
 import RequestBook from "./pages/RequestBook";
 import RequestUpload from "./pages/RequestUpload";
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
+          <Route path="/committee" element={<Committee />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/request-book" element={<RequestBook />} />
           <Route path="/request-upload" element={<RequestUpload />} />
