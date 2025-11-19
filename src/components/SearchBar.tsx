@@ -21,18 +21,18 @@ const SearchBar = ({ placeholder = "Search books, authors, categories...", class
   };
 
   return (
-    <form onSubmit={handleSearch} className={`flex gap-2 ${className}`}>
-      <div className="relative flex-1">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+    <form onSubmit={handleSearch} className={`flex gap-3 ${className}`}>
+      <div className="relative flex-1 group">
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
         <Input
           type="text"
           placeholder={placeholder}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="pl-10 h-12 text-base"
+          className="pl-12 h-14 text-base border-2 border-border hover:border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 transition-all shadow-sm"
         />
       </div>
-      <Button type="submit" size="lg" className="px-8">
+      <Button type="submit" size="lg" className="px-10 h-14 bg-gradient-to-r from-primary to-teal hover:from-teal hover:to-primary shadow-md hover:shadow-lg transition-all duration-300 font-semibold">
         Search
       </Button>
     </form>

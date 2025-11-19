@@ -67,43 +67,46 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-background via-secondary/30 to-background overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iaHNsKDI1IDk1JSA1MyUgLyAwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40" />
+      <section className="relative py-24 px-4 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(180_45%_35%/0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(40_70%_55%/0.08),transparent_50%)]" />
         
         <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 shadow-sm backdrop-blur-sm">
               <BookOpen className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Digital Library of Jain Wisdom</span>
+              <span className="text-sm font-semibold text-primary">Digital Library of Jain Wisdom</span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold font-serif tracking-tight leading-tight">
               Explore the Sacred
               <br />
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="gradient-text animate-shimmer bg-[length:200%_auto]">
                 Jain Scriptures
               </span>
             </h1>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
               Access thousands of sacred texts, scriptures, and philosophical works from the profound Jain tradition.
               Search, read, and download in multiple languages.
             </p>
 
-            <div className="max-w-2xl mx-auto pt-4">
+            <div className="max-w-2xl mx-auto pt-6">
               <SearchBar />
             </div>
 
-            <div className="flex flex-wrap justify-center gap-3 pt-4">
-              <Button asChild size="lg" variant="outline">
+            <div className="flex flex-wrap justify-center gap-4 pt-6">
+              <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10 hover:text-primary hover:border-primary shadow-sm font-semibold">
                 <Link to="/agam-search">
-                  <BookOpen className="mr-2 h-4 w-4" />
+                  <BookOpen className="mr-2 h-5 w-5" />
                   Agam Search
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="border-accent/30 hover:bg-accent/10 hover:text-accent hover:border-accent shadow-sm font-semibold">
                 <Link to="/advanced-search">
-                  <Search className="mr-2 h-4 w-4" />
+                  <Search className="mr-2 h-5 w-5" />
                   Advanced Search
                 </Link>
               </Button>
@@ -113,18 +116,18 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 border-y bg-muted/30">
+      <section className="py-16 border-y glass-effect">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <div key={index} className="text-center space-y-2">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
-                    <Icon className="h-6 w-6" />
+                <div key={index} className="text-center space-y-3 group animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary mx-auto shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+                    <Icon className="h-7 w-7" />
                   </div>
-                  <div className="text-3xl font-bold">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-4xl font-bold font-serif text-foreground group-hover:text-primary transition-colors">{stat.value}</div>
+                  <div className="text-sm font-medium text-muted-foreground">{stat.label}</div>
                 </div>
               );
             })}
@@ -133,26 +136,26 @@ const Index = () => {
       </section>
 
       {/* Featured Categories */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3">Browse by Category</h2>
-            <p className="text-muted-foreground">Discover sacred texts organized by tradition and purpose</p>
+          <div className="text-center mb-14 animate-fade-in">
+            <h2 className="text-4xl font-bold font-serif mb-4">Browse by Category</h2>
+            <p className="text-lg text-muted-foreground">Discover sacred texts organized by tradition and purpose</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category, index) => {
               const Icon = category.icon;
               return (
-                <Link key={index} to={`/search?category=${encodeURIComponent(category.name)}`}>
-                  <Card className="h-full transition-all hover:shadow-lg hover:border-primary/50 cursor-pointer">
-                    <CardContent className="p-6 space-y-4">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 text-primary">
-                        <Icon className="h-6 w-6" />
+                <Link key={index} to={`/search?category=${encodeURIComponent(category.name)}`} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <Card className="h-full card-hover border-border/50 group">
+                    <CardContent className="p-8 space-y-5">
+                      <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 text-primary shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+                        <Icon className="h-7 w-7" />
                       </div>
                       <div>
-                        <h3 className="font-semibold mb-1">{category.name}</h3>
-                        <p className="text-sm text-muted-foreground">{category.count} books</p>
+                        <h3 className="font-serif font-semibold text-xl mb-2 group-hover:text-primary transition-colors">{category.name}</h3>
+                        <p className="text-sm text-muted-foreground font-medium">{category.count} books</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -164,46 +167,56 @@ const Index = () => {
       </section>
 
       {/* Featured Books */}
-      <section className="py-16 px-4 bg-muted/30">
+      <section className="py-20 px-4 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container">
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-14 animate-fade-in">
             <div>
-              <h2 className="text-3xl font-bold mb-3">Featured Books</h2>
-              <p className="text-muted-foreground">Most accessed sacred texts from our collection</p>
+              <h2 className="text-4xl font-bold font-serif mb-4">Featured Books</h2>
+              <p className="text-lg text-muted-foreground">Most accessed sacred texts from our collection</p>
             </div>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" size="lg" className="hidden md:flex hover:bg-primary/10 hover:text-primary border-primary/30 font-semibold">
               <Link to="/search">View All</Link>
             </Button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredBooks.map((book) => (
-              <BookCard key={book.id} {...book} />
+            {featuredBooks.map((book, index) => (
+              <div key={book.id} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                <BookCard {...book} />
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary to-accent text-white">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Support Our Mission</h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Help us preserve and digitize ancient Jain texts for future generations. Your contribution makes a difference.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/donate">
-                <Heart className="mr-2 h-5 w-5" />
-                Make a Donation
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20 text-white">
-              <Link to="/request-upload">
-                <BookOpen className="mr-2 h-5 w-5" />
-                Contribute Content
-              </Link>
-            </Button>
+      <section className="relative py-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-burgundy via-burgundy/90 to-primary" />
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,white,transparent_70%)]" />
+        
+        <div className="container relative z-10 text-center animate-fade-in">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white/20 backdrop-blur-sm shadow-xl mb-4">
+              <Heart className="h-8 w-8 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold font-serif text-white mb-6">Support Our Mission</h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Help us preserve and digitize ancient Jain texts for future generations. Your contribution makes a difference.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <Button asChild size="lg" className="bg-white text-burgundy hover:bg-white/90 shadow-xl hover:shadow-2xl font-bold text-base px-8">
+                <Link to="/donate">
+                  <Heart className="mr-2 h-5 w-5" />
+                  Make a Donation
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 hover:bg-white/20 text-white backdrop-blur-sm font-semibold text-base px-8">
+                <Link to="/request-upload">
+                  <BookOpen className="mr-2 h-5 w-5" />
+                  Contribute Content
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
