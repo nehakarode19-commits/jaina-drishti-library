@@ -57,8 +57,8 @@ const categories = [
 const stats = [
   { label: "Registered Users", value: "76,282", icon: Users },
   { label: "From Countries", value: "234", icon: TrendingUp },
-  { label: "Total Visits", value: "3.0M+", icon: Search },
-  { label: "Files Downloaded", value: "1.7M+", icon: Download },
+  { label: "Total Visits", value: "3,046,881", icon: Search },
+  { label: "Files Downloaded", value: "1,786,547", icon: Download },
   { label: "Files on Website", value: "38,571", icon: BookOpen },
 ];
 
@@ -81,12 +81,8 @@ const Index = () => {
               <span className="text-sm font-semibold text-primary">Publishers Global Search for JAIN Books, Manuscripts & Literature</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold font-serif tracking-tight leading-tight">
-              Welcome to
-              <br />
-              <span className="gradient-text animate-shimmer bg-[length:200%_auto]">
-                Jain eLibrary
-              </span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight">
+              Welcome to the new Jain E -Library site.
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
