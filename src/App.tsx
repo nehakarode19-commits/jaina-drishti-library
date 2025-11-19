@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Feedback from "./pages/Feedback";
 import RequestBook from "./pages/RequestBook";
 import RequestUpload from "./pages/RequestUpload";
+import CatalogueDetail from "./pages/CatalogueDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/request-book" element={<RequestBook />} />
           <Route path="/request-upload" element={<RequestUpload />} />
+          <Route path="/catalogue/:catalogueId" element={<CatalogueDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

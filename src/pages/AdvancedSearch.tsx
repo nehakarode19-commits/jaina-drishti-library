@@ -28,7 +28,7 @@ const AdvancedSearch = () => {
       <main className="flex-1 py-8 px-4">
         <div className="container max-w-6xl">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-primary to-accent text-white mb-4">
+            <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 text-primary mb-4">
               <Search className="h-6 w-6" />
             </div>
             <h1 className="text-3xl font-bold mb-3">Advanced Search</h1>
