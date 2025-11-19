@@ -5,7 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import BookCard from "@/components/BookCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Search, Users, Download, Heart, TrendingUp } from "lucide-react";
+import { BookOpen, Search, Users, Download, Heart, TrendingUp, Building2 } from "lucide-react";
 
 // Sample featured books data
 const featuredBooks = [
@@ -55,10 +55,11 @@ const categories = [
 ];
 
 const stats = [
-  { label: "Total Books", value: "2,450+", icon: BookOpen },
-  { label: "Active Users", value: "15,000+", icon: Users },
-  { label: "Downloads", value: "500K+", icon: Download },
-  { label: "Languages", value: "12", icon: Search },
+  { label: "Registered Users", value: "76,282", icon: Users },
+  { label: "From Countries", value: "234", icon: TrendingUp },
+  { label: "Total Visits", value: "3.0M+", icon: Search },
+  { label: "Files Downloaded", value: "1.7M+", icon: Download },
+  { label: "Files on Website", value: "38,571", icon: BookOpen },
 ];
 
 const Index = () => {
@@ -74,41 +75,62 @@ const Index = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(40_70%_55%/0.08),transparent_50%)]" />
         
         <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
+          <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 shadow-sm backdrop-blur-sm">
               <BookOpen className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Digital Library of Jain Wisdom</span>
+              <span className="text-sm font-semibold text-primary">Publishers Global Search for JAIN Books, Manuscripts & Literature</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold font-serif tracking-tight leading-tight">
-              Explore the Sacred
+              Welcome to
               <br />
               <span className="gradient-text animate-shimmer bg-[length:200%_auto]">
-                Jain Scriptures
+                Jain eLibrary
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
-              Access thousands of sacred texts, scriptures, and philosophical works from the profound Jain tradition.
-              Search, read, and download in multiple languages.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
+              Global Search for JAIN Books, Manuscript, Literature, Seminar, Memorabilia, Dictionary, Magazines & Articles
             </p>
 
-            <div className="max-w-2xl mx-auto pt-6">
-              <SearchBar />
+            <div className="max-w-3xl mx-auto pt-6">
+              <SearchBar placeholder="Search books, manuscripts, literature..." />
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 pt-6">
-              <Button asChild size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10 hover:text-primary hover:border-primary shadow-sm font-semibold">
-                <Link to="/agam-search">
-                  <BookOpen className="mr-2 h-5 w-5" />
-                  Agam Search
-                </Link>
+            {/* Search Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-3 pt-4">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary hover:border-primary shadow-sm font-medium">
+                <Link to="/search?filter=title">Search By Title</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-accent/30 hover:bg-accent/10 hover:text-accent hover:border-accent shadow-sm font-semibold">
-                <Link to="/advanced-search">
-                  <Search className="mr-2 h-5 w-5" />
-                  Advanced Search
-                </Link>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary hover:border-primary shadow-sm font-medium">
+                <Link to="/search?filter=author">Search By Author</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary hover:border-primary shadow-sm font-medium">
+                <Link to="/search?filter=category">Search By Category</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-primary/30 hover:bg-primary/10 hover:text-primary hover:border-primary shadow-sm font-medium">
+                <Link to="/search?filter=keyword">Search By Keyword</Link>
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-accent/30 hover:bg-accent/10 hover:text-accent hover:border-accent shadow-sm font-medium">
+                <Link to="/search?filter=publisher">Search By Publisher</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-accent/30 hover:bg-accent/10 hover:text-accent hover:border-accent shadow-sm font-medium">
+                <Link to="/search?filter=all">Search by All fields</Link>
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-burgundy/30 hover:bg-burgundy/10 hover:text-burgundy hover:border-burgundy shadow-sm font-medium">
+                <Link to="/search?filter=quantum">Search By Quantum</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-burgundy/30 hover:bg-burgundy/10 hover:text-burgundy hover:border-burgundy shadow-sm font-medium">
+                <Link to="/agam-search">Search Agam</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full border-burgundy/30 hover:bg-burgundy/10 hover:text-burgundy hover:border-burgundy shadow-sm font-medium">
+                <Link to="/search?filter=ocr">Search OCR Content</Link>
               </Button>
             </div>
           </div>
@@ -118,7 +140,7 @@ const Index = () => {
       {/* Stats Section */}
       <section className="py-16 border-y glass-effect">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -131,6 +153,43 @@ const Index = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Links Section */}
+      <section className="py-16 px-4 bg-gradient-to-b from-secondary/20 to-background">
+        <div className="container">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold font-serif mb-4">Quick Links</h2>
+            <p className="text-lg text-muted-foreground">Fast access to commonly used search tools</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            <Button asChild size="lg" className="h-14 bg-gradient-to-r from-primary to-teal hover:from-teal hover:to-primary shadow-md hover:shadow-lg transition-all duration-300 font-semibold">
+              <Link to="/advanced-search">
+                <Search className="mr-2 h-5 w-5" />
+                Advanced E-library Search
+              </Link>
+            </Button>
+            <Button asChild size="lg" className="h-14 bg-gradient-to-r from-primary to-teal hover:from-teal hover:to-primary shadow-md hover:shadow-lg transition-all duration-300 font-semibold">
+              <Link to="/search?filter=authors">
+                <Users className="mr-2 h-5 w-5" />
+                Search By All Authors
+              </Link>
+            </Button>
+            <Button asChild size="lg" className="h-14 bg-gradient-to-r from-primary to-teal hover:from-teal hover:to-primary shadow-md hover:shadow-lg transition-all duration-300 font-semibold">
+              <Link to="/search?filter=publishers">
+                <Building2 className="mr-2 h-5 w-5" />
+                Search By All Publisher
+              </Link>
+            </Button>
+            <Button asChild size="lg" className="h-14 bg-gradient-to-r from-primary to-teal hover:from-teal hover:to-primary shadow-md hover:shadow-lg transition-all duration-300 font-semibold">
+              <Link to="/search?sort=latest">
+                <TrendingUp className="mr-2 h-5 w-5" />
+                Latest Downloaded Books
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
