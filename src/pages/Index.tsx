@@ -201,25 +201,25 @@ const Index = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-8 text-center">Quick Links</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            <Button asChild size="lg" className="h-12 bg-burgundy hover:bg-burgundy/90 text-burgundy-foreground font-semibold">
+            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/advanced-search">
                 <Search className="mr-2 h-5 w-5" />
                 Advanced E-library Search
               </Link>
             </Button>
-            <Button asChild size="lg" className="h-12 bg-burgundy hover:bg-burgundy/90 text-burgundy-foreground font-semibold">
+            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/search?filter=authors">
                 <Users className="mr-2 h-5 w-5" />
                 Search By All Authors
               </Link>
             </Button>
-            <Button asChild size="lg" className="h-12 bg-burgundy hover:bg-burgundy/90 text-burgundy-foreground font-semibold">
+            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/search?filter=publishers">
                 <Building2 className="mr-2 h-5 w-5" />
                 Search By All Publisher
               </Link>
             </Button>
-            <Button asChild size="lg" className="h-12 bg-burgundy hover:bg-burgundy/90 text-burgundy-foreground font-semibold">
+            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/search?sort=latest">
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Latest Downloaded Books
@@ -236,13 +236,13 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {educationBooks.map((book, index) => (
               <Link key={index} to={book.link}>
-                <Card className="h-full hover:shadow-lg transition-shadow border-border/50">
+                <Card className="h-full hover:shadow-lg transition-shadow border-border/50 group">
                   <CardContent className="p-6 space-y-4">
-                    <div className="h-16 w-16 bg-burgundy/10 rounded-lg flex items-center justify-center">
-                      <BookOpen className="h-8 w-8 text-burgundy" />
+                    <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <BookOpen className="h-8 w-8 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-base leading-tight">{book.title}</h3>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
+                    <h3 className="font-semibold text-base leading-tight group-hover:text-primary transition-colors">{book.title}</h3>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                   </CardContent>
                 </Card>
               </Link>
@@ -259,7 +259,7 @@ const Index = () => {
             <TabsList className="mb-6 flex-wrap h-auto">
               <TabsTrigger value="paryushan">Paryushan and Rituals</TabsTrigger>
               <TabsTrigger value="jaina">JAINA Education Books</TabsTrigger>
-              <TabsTrigger value="sandhya" className="bg-burgundy text-white data-[state=active]:bg-burgundy">Sandhya Books and Scriptures</TabsTrigger>
+              <TabsTrigger value="sandhya" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Sandhya Books and Scriptures</TabsTrigger>
               <TabsTrigger value="jain-books">Jain Books in Unicode</TabsTrigger>
             </TabsList>
             
@@ -304,7 +304,7 @@ const Index = () => {
               <TabsTrigger value="dictionary">Dictionary Collection</TabsTrigger>
               <TabsTrigger value="articles">Jain Articles</TabsTrigger>
               <TabsTrigger value="manuscripts">Jain Manuscripts</TabsTrigger>
-              <TabsTrigger value="magazines" className="bg-burgundy text-white data-[state=active]:bg-burgundy">Jain Magazine</TabsTrigger>
+              <TabsTrigger value="magazines" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Jain Magazine</TabsTrigger>
               <TabsTrigger value="multimedia">Multimedia</TabsTrigger>
             </TabsList>
             
@@ -373,7 +373,7 @@ const Index = () => {
                             <span>Down Count: {catalogue.downloads}</span>
                           </div>
                         </div>
-                        <Button asChild variant="default" size="sm" className="bg-burgundy hover:bg-burgundy/90 self-start">
+                        <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 self-start shadow-sm hover:shadow-md transition-all">
                           <Link to={catalogue.link}>View Details</Link>
                         </Button>
                       </div>

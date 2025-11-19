@@ -170,12 +170,12 @@ const CatalogueDetail = () => {
                     <p className="text-sm text-muted-foreground">PDF Document Available</p>
                   </div>
 
-                  <Button className="w-full h-12 bg-burgundy hover:bg-burgundy/90 text-burgundy-foreground font-semibold">
+                  <Button className="w-full h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
                     <Download className="mr-2 h-5 w-5" />
                     Download Catalogue
                   </Button>
 
-                  <Button variant="outline" className="w-full h-12 border-burgundy/30 hover:bg-burgundy/10 hover:text-burgundy font-semibold">
+                  <Button variant="outline" className="w-full h-12 border-primary/30 hover:bg-primary/10 hover:text-primary font-semibold">
                     <Eye className="mr-2 h-5 w-5" />
                     Preview Online
                   </Button>
