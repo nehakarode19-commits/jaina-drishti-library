@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import GlobalSearch from "./pages/GlobalSearch";
 import BookDetail from "./pages/BookDetail";
+import Bookstore from "./pages/Bookstore";
+import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +22,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/search" element={<GlobalSearch />} />
           <Route path="/book/:id" element={<BookDetail />} />
+          <Route path="/bookstore" element={<Bookstore />} />
+          <Route path="/donate" element={<Donate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
