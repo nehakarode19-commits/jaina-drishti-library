@@ -31,10 +31,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold font-serif text-lg mb-5">Resources</h3>
             <ul className="space-y-3 text-sm">
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors font-medium">About Us</Link></li>
-              <li><Link to="/feedback" className="text-muted-foreground hover:text-primary transition-colors font-medium">Feedback</Link></li>
               <li><Link to="/request-book" className="text-muted-foreground hover:text-primary transition-colors font-medium">Request New Book</Link></li>
               <li><Link to="/request-upload" className="text-muted-foreground hover:text-primary transition-colors font-medium">Upload Request</Link></li>
+              <li><Link to="/donate" className="text-muted-foreground hover:text-primary transition-colors font-medium">Donate</Link></li>
             </ul>
           </div>
 
