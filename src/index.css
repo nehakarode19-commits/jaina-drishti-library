@@ -18,10 +18,10 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 12%;
 
-    /* Deep Teal - Primary brand color */
-    --primary: 180 45% 35%;
+    /* Olive Green - Primary brand color */
+    --primary: 50 20% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 180 45% 92%;
+    --primary-light: 50 20% 95%;
 
     /* Warm beige/cream secondary */
     --secondary: 40 30% 96%;
@@ -36,9 +36,9 @@ All colors MUST be HSL.
     --accent-foreground: 220 20% 12%;
     --accent-light: 40 70% 95%;
 
-    /* Burgundy for important actions */
-    --burgundy: 350 60% 40%;
-    --burgundy-foreground: 0 0% 100%;
+    /* Black for buttons */
+    --black-btn: 0 0% 0%;
+    --black-btn-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -50,9 +50,9 @@ All colors MUST be HSL.
     --radius: 0.75rem;
     
     /* Premium Design Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(180 45% 35%) 0%, hsl(180 50% 45%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(50 20% 25%) 0%, hsl(50 25% 30%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(40 70% 55%) 0%, hsl(45 75% 60%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(180 45% 35%) 0%, hsl(200 40% 45%) 50%, hsl(220 35% 55%) 100%);
+    --gradient-hero: linear-gradient(to bottom, hsl(40 40% 95%) 0%, hsl(120 40% 95%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(40 30% 98%) 100%);
     
     --shadow-sm: 0 1px 2px 0 hsl(220 20% 12% / 0.05);

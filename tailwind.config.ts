@@ -23,12 +23,12 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        teal: {
-          DEFAULT: "hsl(180 45% 35%)",
-          light: "hsl(180 45% 92%)",
+        olive: {
+          DEFAULT: "hsl(50 20% 25%)",
+          light: "hsl(50 20% 95%)",
         },
-        burgundy: {
-          DEFAULT: "hsl(350 60% 40%)",
+        'black-btn': {
+          DEFAULT: "hsl(0 0% 0%)",
           foreground: "hsl(0 0% 100%)",
         },
         gold: {
