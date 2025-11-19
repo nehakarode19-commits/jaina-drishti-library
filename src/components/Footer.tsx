@@ -1,63 +1,73 @@
 import { Link } from "react-router-dom";
-import { Book, Mail, Phone, MapPin } from "lucide-react";
+import { Book, MessageCircle, Mail, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t bg-gradient-to-b from-secondary/30 to-background">
-      <div className="container py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-teal shadow-md">
-                <Book className="h-5 w-5 text-white" />
-              </div>
-              <span className="font-bold font-serif text-lg">Jain eLibrary</span>
+    <footer className="border-t bg-gradient-to-b from-[#2C3E2E] to-[#1F2B20] text-white">
+      <div className="container py-12">
+        {/* Logo and Text */}
+        <div className="flex flex-col items-center mb-8 space-y-4">
+          <div className="flex items-center gap-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm">
+              <Book className="h-6 w-6 text-white" />
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Preserving and sharing the profound wisdom of Jain scriptures and literature for seekers worldwide.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold font-serif text-lg mb-5">Explore</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/search" className="text-muted-foreground hover:text-primary transition-colors font-medium">Global Search</Link></li>
-              <li><Link to="/agam-search" className="text-muted-foreground hover:text-primary transition-colors font-medium">Agam Search</Link></li>
-              <li><Link to="/advanced-search" className="text-muted-foreground hover:text-primary transition-colors font-medium">Advanced Search</Link></li>
-              <li><Link to="/bookstore" className="text-muted-foreground hover:text-primary transition-colors font-medium">Buy Books</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold font-serif text-lg mb-5">Resources</h3>
-            <ul className="space-y-3 text-sm">
-              <li><Link to="/request-book" className="text-muted-foreground hover:text-primary transition-colors font-medium">Request New Book</Link></li>
-              <li><Link to="/request-upload" className="text-muted-foreground hover:text-primary transition-colors font-medium">Upload Request</Link></li>
-              <li><Link to="/donate" className="text-muted-foreground hover:text-primary transition-colors font-medium">Donate</Link></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold font-serif text-lg mb-5">Contact</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3 text-muted-foreground group">
-                <Mail className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                <span className="font-medium">contact@jainelibrary.org</span>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground group">
-                <Phone className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                <span className="font-medium">+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-start gap-3 text-muted-foreground group">
-                <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0 text-primary/60 group-hover:text-primary transition-colors" />
-                <span className="font-medium">Jain Heritage Center<br />123 Spiritual Way</span>
-              </li>
-            </ul>
+            <div>
+              <span className="font-bold text-xl block">Jain eLibrary</span>
+              <span className="text-sm text-white/70">जैन ई लाइब्रेरी</span>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t text-center">
-          <p className="text-sm text-muted-foreground font-medium">© {new Date().getFullYear()} Jain eLibrary. All rights reserved. | <span className="text-primary">Jai Jinendra 🙏</span></p>
+        {/* Navigation Links */}
+        <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+          <Link to="/" className="text-white/80 hover:text-white transition-colors">Home</Link>
+          <Link to="/about" className="text-white/80 hover:text-white transition-colors">About Us</Link>
+          <Link to="/donate" className="text-white/80 hover:text-white transition-colors">Donation</Link>
+          <Link to="/request-book" className="text-white/80 hover:text-white transition-colors">Request</Link>
+          <Link to="/feedback" className="text-white/80 hover:text-white transition-colors">Feedback</Link>
+        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex justify-center gap-4 mb-8">
+          <a 
+            href="https://wa.me/1234567890" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
+            aria-label="WhatsApp"
+          >
+            <MessageCircle className="h-5 w-5 text-white" />
+          </a>
+          <a 
+            href="mailto:info@jainelibrary.org"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
+            aria-label="Email"
+          >
+            <Mail className="h-5 w-5 text-white" />
+          </a>
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
+            aria-label="Facebook"
+          >
+            <Facebook className="h-5 w-5 text-white" />
+          </a>
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
+            aria-label="Instagram"
+          >
+            <Instagram className="h-5 w-5 text-white" />
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center text-sm text-white/70 border-t border-white/10 pt-6">
+          <p>Copyright © Jain Education International. All rights reserved. | <Link to="/about" className="hover:text-white transition-colors">Privacy Policy</Link></p>
         </div>
       </div>
     </footer>

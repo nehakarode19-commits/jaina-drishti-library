@@ -26,7 +26,7 @@ const Donate = () => {
         <div className="container max-w-5xl">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-primary to-accent text-white mb-4">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-burgundy/10 text-burgundy mb-4">
               <Heart className="h-8 w-8" />
             </div>
             <h1 className="text-4xl font-bold mb-4">Support Our Mission</h1>
