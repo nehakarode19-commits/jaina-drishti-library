@@ -141,40 +141,40 @@ const Index = () => {
             {/* Search Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-2 pt-4">
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=title">Search By Title</Link>
+                <Link to="/global-search?filter=title">Search By Title</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=author">Search By Author</Link>
+                <Link to="/global-search?filter=author">Search By Author</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=category">Search By Category</Link>
+                <Link to="/global-search?filter=category">Search by Category</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=keyword">Search By Keyword</Link>
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2">
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=publisher">Search By Publisher</Link>
-              </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=all">Search by All fields</Link>
+                <Link to="/global-search?filter=keyword">Search By Keyword</Link>
               </Button>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=quantum">Search By Quantum</Link>
+                <Link to="/global-search?filter=publisher">Search By Publisher</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search/agam">Search Agam</Link>
+                <Link to="/global-search?filter=all">Search by All fields</Link>
+              </Button>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+                <Link to="/global-search?filter=quantum">Search By Quantum</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search/agam">Scriptures in Agam Search</Link>
+                <Link to="/global-search?filter=agam">Search Agam</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/search?filter=ocr">Search OCR Content</Link>
+                <Link to="/global-search?filter=agam">Scriptures in Agam Search</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+                <Link to="/global-search?filter=ocr">Search OCR Content</Link>
               </Button>
             </div>
           </div>
