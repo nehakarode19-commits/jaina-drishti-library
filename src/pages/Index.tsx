@@ -233,19 +233,19 @@ const Index = () => {
       </section>
 
       {/* Buy Jain Education Books */}
-      <section className="py-12 px-4 bg-secondary/20">
-        <div className="container">
+      <section className="page-section bg-secondary/20">
+        <div className="page-container">
           <h2 className="text-3xl font-bold mb-8">Buy Jain Education Books</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid-cards">
             {educationBooks.map((book, index) => (
               <Link key={index} to={book.link}>
-                <Card className="h-full hover:shadow-lg transition-shadow border-border/50 group">
+                <Card className="card-interactive border-border/50">
                   <CardContent className="p-6 space-y-4">
-                    <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center">
                       <BookOpen className="h-8 w-8 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-base leading-tight group-hover:text-primary transition-colors">{book.title}</h3>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <h3 className="font-semibold text-base leading-tight">{book.title}</h3>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground" />
                   </CardContent>
                 </Card>
               </Link>
@@ -255,8 +255,8 @@ const Index = () => {
       </section>
 
       {/* Quick Links to collections */}
-      <section className="py-12 px-4 bg-background">
-        <div className="container">
+      <section className="page-section">
+        <div className="page-container">
           <h2 className="text-3xl font-bold mb-8">Quick Links to collections</h2>
           <Tabs defaultValue="sandhya" className="w-full">
             <TabsList className="mb-6 flex-wrap h-auto">
@@ -267,10 +267,10 @@ const Index = () => {
             </TabsList>
             
             <TabsContent value="sandhya">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid-cards">
                 {collectionBooks.map((book, index) => (
                   <Link key={index} to={book.link}>
-                    <Card className="h-full hover:shadow-lg transition-shadow">
+                    <Card className="card-interactive">
                       <CardContent className="p-6 space-y-4">
                         <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center">
                           <BookOpen className="h-8 w-8 text-primary" />
@@ -298,8 +298,8 @@ const Index = () => {
       </section>
 
       {/* Quick Links to Elibrary by Type */}
-      <section className="py-12 px-4 bg-secondary/20">
-        <div className="container">
+      <section className="page-section bg-secondary/20">
+        <div className="page-container">
           <h2 className="text-3xl font-bold mb-8">Quick Links to Elibrary by Type</h2>
           <Tabs defaultValue="magazines" className="w-full">
             <TabsList className="mb-6 flex-wrap h-auto">
@@ -312,10 +312,10 @@ const Index = () => {
             </TabsList>
             
             <TabsContent value="magazines">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid-cards">
                 {magazines.map((magazine, index) => (
                   <Link key={index} to={magazine.link}>
-                    <Card className="h-full hover:shadow-lg transition-shadow">
+                    <Card className="card-interactive">
                       <CardContent className="p-6 space-y-4">
                         <div className="h-16 w-16 bg-accent/10 rounded-lg flex items-center justify-center">
                           <BookOpen className="h-8 w-8 text-accent" />

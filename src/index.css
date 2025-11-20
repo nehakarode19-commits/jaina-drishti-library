@@ -148,6 +148,42 @@ All colors MUST be HSL.
 }
 
 @layer components {
+  /* Layout System - Consistent spacing across all pages */
+  .page-section {
+    @apply py-12 px-4;
+  }
+
+  .page-section-lg {
+    @apply py-16 px-4;
+  }
+
+  .page-container {
+    @apply container max-w-7xl mx-auto;
+  }
+
+  /* Grid System - Consistent grid layouts */
+  .grid-cards {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+
+  .grid-cards-3 {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .grid-cards-2 {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+  }
+
+  /* Card System - Consistent card styling */
+  .card-standard {
+    @apply bg-white rounded-lg border border-border shadow-sm hover:shadow-md transition-all duration-300 p-6;
+  }
+
+  .card-interactive {
+    @apply bg-white rounded-lg border border-border shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-6;
+  }
+
+  /* Existing styles */
   .glass-effect {
     @apply bg-background/80 backdrop-blur-md border border-border/50;
   }
