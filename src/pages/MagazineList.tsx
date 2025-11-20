@@ -77,13 +77,14 @@ const MagazineList = () => {
             
             <div className="divide-y">
               {data.items.map((item, index) => (
-                <div 
+                <a
+                  href={`/magazines/detail?region=${region}&magazine=${item.name}`}
                   key={index} 
-                  className="grid grid-cols-[1fr,auto] gap-4 p-4 hover:bg-muted/30 transition-colors"
+                  className="grid grid-cols-[1fr,auto] gap-4 p-4 hover:bg-muted/30 transition-colors cursor-pointer"
                 >
                   <div className="text-sm">{item.name}</div>
                   <div className="text-sm font-medium text-primary">{item.files}</div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
