@@ -126,7 +126,7 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-16 px-4 overflow-hidden bg-[#F5E6D3]">
+      <section className="relative py-16 px-4 overflow-hidden bg-[#F5E6D3]" style={{ backgroundImage: 'url(/images/hero-background.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-6 animate-fade-in-up">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
