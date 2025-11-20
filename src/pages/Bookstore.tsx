@@ -56,11 +56,11 @@ const Bookstore = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 py-12 px-4">
-        <div className="container max-w-6xl">
+      <main className="flex-1 page-section">
+        <div className="page-container">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4 text-foreground">
               Buy Jaina Education Books
@@ -70,12 +70,12 @@ const Bookstore = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid-cards-2 max-w-4xl mx-auto">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => handleCategoryClick(category.slug)}
-                className="group bg-[#FEF7E7] hover:bg-[#F5E6C8] rounded-lg p-8 shadow-sm transition-all duration-200 hover:shadow-md border border-[#D4C5A0]"
+                className="card-interactive bg-[#FEF7E7] hover:bg-[#F5E6C8] border-[#D4C5A0]"
               >
                 <div className="flex flex-col items-center text-center space-y-4">
                   <div className="bg-[#8B7355] rounded-lg p-6 group-hover:scale-105 transition-transform duration-200">

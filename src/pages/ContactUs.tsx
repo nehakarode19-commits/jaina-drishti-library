@@ -74,14 +74,14 @@ const ContactUs = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 py-16 px-4">
-        <div className="container max-w-6xl">
+      <main className="flex-1 page-section-lg">
+        <div className="page-container">
           <h1 className="text-4xl font-bold text-center mb-12">Contact Us</h1>
 
           {/* Main Contacts */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid-cards-2 mb-12">
             {contacts.map((contact, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+              <Card key={index} className="card-interactive">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -104,9 +104,9 @@ const ContactUs = () => {
             <h2 className="text-2xl font-semibold text-center mb-8 text-primary">
               Directors
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid-cards-3">
               {directors.map((director, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+                <Card key={index} className="card-interactive">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">

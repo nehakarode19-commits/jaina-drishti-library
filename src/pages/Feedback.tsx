@@ -72,16 +72,16 @@ const Feedback = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/20">
+    <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 py-8 px-4">
+      <main className="flex-1 page-section">
         <div className="container max-w-4xl">
           <h1 className="text-4xl font-bold text-center mb-8 text-foreground">
             User Feedback / Suggestions
           </h1>
 
-          <div className="bg-[#FEF7E7] rounded-lg p-8 md:p-12 shadow-sm">
+          <div className="card-standard bg-[#FEF7E7]">
             <div className="bg-[#F5E6C8] rounded-lg p-6 mb-8 text-center">
               <p className="text-[#6B5D3F] text-base">
                 Any other information we could add in the eLibrary website. If you notice any error in the search
@@ -90,7 +90,7 @@ const Feedback = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid-cards-2">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-[#6B5D3F] font-medium">
                     Your Name
