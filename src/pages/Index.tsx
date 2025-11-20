@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
@@ -6,7 +6,7 @@ import BookCard from "@/components/BookCard";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Search, Users, Download, Heart, TrendingUp, Building2, Info, ExternalLink } from "lucide-react";
+import { BookOpen, Search, Users, Download, Heart, TrendingUp, Building2, Info, ExternalLink, X } from "lucide-react";
 
 // Sample featured books data
 const featuredBooks = [
@@ -104,6 +104,8 @@ const catalogues = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -166,7 +168,10 @@ const Index = () => {
                 <Link to="/search?filter=quantum">Search By Quantum</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/agam-search">Search Agam</Link>
+                <Link to="/search/agam">Search Agam</Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+                <Link to="/search/agam">Scriptures in Agam Search</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
                 <Link to="/search?filter=ocr">Search OCR Content</Link>
