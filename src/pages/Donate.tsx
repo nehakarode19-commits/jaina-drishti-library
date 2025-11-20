@@ -28,17 +28,17 @@ const Donate = () => {
           <div className="space-y-6">
             {/* US Dollar via Credit Card or PayPal */}
             <div className="bg-[#FEF7E7] rounded-lg border border-[#D4C5A0] p-6 flex items-start gap-4">
-              <div className="bg-[#8B7355] rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
+              <div className="bg-black-btn rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
                 <BookOpen className="h-7 w-7 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-[#4A4129] mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   US Dollar via Credit Card or PayPal – Tax deductible in USA
                 </h3>
               </div>
               <Button
                 onClick={() => navigate("/donate/form")}
-                className="bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full px-8"
+                className="bg-black-btn hover:bg-black-btn/90 text-white rounded-full px-8"
               >
                 Donate Now
               </Button>
@@ -46,21 +46,21 @@ const Donate = () => {
 
             {/* US Dollar Pay via Zelle */}
             <div className="bg-[#FEF7E7] rounded-lg border border-[#D4C5A0] p-6 flex items-start gap-4">
-              <div className="bg-[#8B7355] rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
+              <div className="bg-black-btn rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
                 <BookOpen className="h-7 w-7 text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-[#4A4129] mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2">
                   US Dollar Pay via Zelle – Tax deductible in USA
                 </h3>
-                <p className="text-sm text-[#6B5D3F]">
+                <p className="text-sm text-muted-foreground">
                   Please use your online banking to pay by zelle ID.<br />
                   Please fill out the form so we can send you the receipt.
                 </p>
               </div>
               <Button
                 onClick={() => navigate("/donate/fill-form")}
-                className="bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full px-8"
+                className="bg-black-btn hover:bg-black-btn/90 text-white rounded-full px-8"
               >
                 Fill Form
               </Button>

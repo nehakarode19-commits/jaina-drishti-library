@@ -206,25 +206,25 @@ const Index = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-8 text-center">Quick Links</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
+            <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/advanced-search">
                 <Search className="mr-2 h-5 w-5" />
                 Advanced E-library Search
               </Link>
             </Button>
-            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
+            <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/search?filter=authors">
                 <Users className="mr-2 h-5 w-5" />
                 Search By All Authors
               </Link>
             </Button>
-            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
+            <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/search?filter=publishers">
                 <Building2 className="mr-2 h-5 w-5" />
                 Search By All Publisher
               </Link>
             </Button>
-            <Button asChild size="lg" className="h-12 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all">
+            <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
               <Link to="/search?sort=latest">
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Latest Downloaded Books
@@ -378,10 +378,10 @@ const Index = () => {
                             <span>Down Count: {catalogue.downloads}</span>
                           </div>
                           <div className="flex gap-2 pt-2">
-                            <Button asChild size="sm" className="bg-[#5B4912] hover:bg-[#6B5522] text-white rounded-full px-6">
+                            <Button asChild size="sm" className="bg-black-btn hover:bg-black-btn/90 text-white rounded-full px-6">
                               <Link to={catalogue.link}>View Details</Link>
                             </Button>
-                            <Button asChild size="sm" className="bg-[#5B4912] hover:bg-[#6B5522] text-white rounded-full px-6">
+                            <Button asChild size="sm" className="bg-black-btn hover:bg-black-btn/90 text-white rounded-full px-6">
                               <Link to={catalogue.link}>View ebook</Link>
                             </Button>
                           </div>
@@ -420,16 +420,16 @@ const Index = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-10 text-center">Discover More from Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
+            <Button asChild size="lg" className="h-14 bg-black-btn hover:bg-black-btn/90 text-white font-semibold text-base rounded-full">
               <a href="https://jainqq.org" target="_blank" rel="noopener noreferrer">JainQQ</a>
             </Button>
-            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
+            <Button asChild size="lg" className="h-14 bg-black-btn hover:bg-black-btn/90 text-white font-semibold text-base rounded-full">
               <a href="https://jainart.com" target="_blank" rel="noopener noreferrer">JainArt</a>
             </Button>
-            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
+            <Button asChild size="lg" className="h-14 bg-black-btn hover:bg-black-btn/90 text-white font-semibold text-base rounded-full">
               <a href="https://jainsmsays.com" target="_blank" rel="noopener noreferrer">JainSm Says</a>
             </Button>
-            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
+            <Button asChild size="lg" className="h-14 bg-black-btn hover:bg-black-btn/90 text-white font-semibold text-base rounded-full">
               <a href="https://jainacademicbowl.com" target="_blank" rel="noopener noreferrer">Jain Academic Bowl</a>
             </Button>
           </div>

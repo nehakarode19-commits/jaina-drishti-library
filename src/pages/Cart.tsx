@@ -71,20 +71,20 @@ const Cart = () => {
               <div className="flex gap-3 mb-6">
                 <Button
                   onClick={() => setStep("shipping")}
-                  className={step === "shipping" ? "bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full" : "bg-white text-[#8B7355] border-[#8B7355] hover:bg-[#8B7355]/10 rounded-full"}
+                  className={step === "shipping" ? "bg-black-btn hover:bg-black-btn/90 text-white rounded-full" : "bg-white text-black-btn border-black-btn hover:bg-black-btn/10 rounded-full"}
                 >
                   <span className="mr-2">✓</span> Shipping
                 </Button>
                 <Button
                   onClick={() => step !== "shipping" && setStep("payment")}
                   disabled={step === "shipping"}
-                  className={step === "payment" ? "bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full" : "bg-white text-[#8B7355] border-[#8B7355] hover:bg-[#8B7355]/10 rounded-full"}
+                  className={step === "payment" ? "bg-black-btn hover:bg-black-btn/90 text-white rounded-full" : "bg-white text-black-btn border-black-btn hover:bg-black-btn/10 rounded-full"}
                 >
                   <span className="mr-2">✓</span> Payment
                 </Button>
                 <Button
                   disabled
-                  className={step === "confirmation" ? "bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full" : "bg-white text-muted-foreground border-muted rounded-full"}
+                  className={step === "confirmation" ? "bg-black-btn hover:bg-black-btn/90 text-white rounded-full" : "bg-white text-muted-foreground border-muted rounded-full"}
                 >
                   <span className="mr-2">○</span> Confirmation
                 </Button>
@@ -160,7 +160,7 @@ const Cart = () => {
 
                     <Button
                       onClick={handleContinue}
-                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full py-6 text-lg font-semibold mt-6"
+                      className="w-full bg-black-btn hover:bg-black-btn/90 text-white rounded-full py-6 text-lg font-semibold mt-6"
                     >
                       Continue
                     </Button>
@@ -232,7 +232,7 @@ const Cart = () => {
 
                     <Button
                       onClick={handleContinue}
-                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full py-6 text-lg font-semibold mt-6"
+                      className="w-full bg-black-btn hover:bg-black-btn/90 text-white rounded-full py-6 text-lg font-semibold mt-6"
                     >
                       Continue
                     </Button>
@@ -284,7 +284,7 @@ const Cart = () => {
                         });
                         navigate("/");
                       }}
-                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full py-6 text-lg font-semibold mt-6"
+                      className="w-full bg-black-btn hover:bg-black-btn/90 text-white rounded-full py-6 text-lg font-semibold mt-6"
                     >
                       Order Now
                     </Button>
@@ -301,21 +301,21 @@ const Cart = () => {
                 <div className="space-y-4 mb-6">
                   {items.map((item) => (
                     <div key={item.id} className="flex gap-4 p-4 bg-white rounded-lg border border-[#D4C5A0]">
-                      <div className="bg-[#8B7355] rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
+                      <div className="bg-black-btn rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
                         <BookOpen className="h-7 w-7 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-base mb-2 text-foreground">
                           {item.title}
                         </h3>
-                        <p className="text-xl font-bold text-[#8B7355] mb-3">
+                        <p className="text-xl font-bold text-black-btn mb-3">
                           Rs.{item.price.toFixed(2)}
                         </p>
                         <div className="flex items-center gap-2">
                           <Button
                             variant="outline"
                             size="icon"
-                            className="h-8 w-8 border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355]/10"
+                            className="h-8 w-8 border-black-btn text-black-btn hover:bg-black-btn/10"
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           >
                             <Minus className="h-3 w-3" />
@@ -326,7 +326,7 @@ const Cart = () => {
                           <Button
                             variant="outline"
                             size="icon"
-                            className="h-8 w-8 border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355]/10"
+                            className="h-8 w-8 border-black-btn text-black-btn hover:bg-black-btn/10"
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           >
                             <Plus className="h-3 w-3" />
@@ -352,13 +352,13 @@ const Cart = () => {
                   </div>
                   <div className="flex justify-between text-base">
                     <span className="text-foreground">
-                      Shipping <button className="text-[#8B7355] underline font-medium">View Details</button>
+                      Shipping <button className="text-black-btn underline font-medium">View Details</button>
                     </span>
                     <span className="font-bold text-foreground">Rs.{shippingCost.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between text-xl font-bold pt-4 border-t-2 border-[#C8E6C9]">
                     <span className="text-foreground">Grand Total</span>
-                    <span className="text-[#8B7355]">Rs.{total.toFixed(2)}</span>
+                    <span className="text-black-btn">Rs.{total.toFixed(2)}</span>
                   </div>
                 </div>
               </div>
