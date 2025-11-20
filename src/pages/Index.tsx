@@ -79,10 +79,10 @@ const collectionBooks = [
 ];
 
 const magazines = [
-  { title: "Canada Magazines", link: "/search?type=magazine&region=canada" },
-  { title: "India Magazines", link: "/search?type=magazine&region=india" },
-  { title: "USA Magazines", link: "/search?type=magazine&region=usa" },
-  { title: "UK Magazines", link: "/search?type=magazine&region=uk" },
+  { title: "Canada Magazines", link: "/magazines?region=canada" },
+  { title: "India Magazines", link: "/magazines?region=india" },
+  { title: "USA Magazines", link: "/magazines?region=usa" },
+  { title: "UK Magazines", link: "/magazines?region=uk" },
 ];
 
 const catalogues = [
