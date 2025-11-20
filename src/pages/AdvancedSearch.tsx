@@ -154,7 +154,7 @@ const AdvancedSearch = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                  <Button className="flex-1">
+                  <Button className="flex-1 bg-black-btn hover:bg-black-btn/90 text-white">
                     <Search className="mr-2 h-4 w-4" />
                     Search Books
                   </Button>

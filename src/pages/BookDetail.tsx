@@ -54,7 +54,7 @@ const BookDetail = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Button className="w-full" size="lg">
+                    <Button className="w-full bg-black-btn hover:bg-black-btn/90 text-white" size="lg">
                       <Download className="mr-2 h-5 w-5" />
                       Download PDF
                     </Button>

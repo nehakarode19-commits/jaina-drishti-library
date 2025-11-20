@@ -108,7 +108,7 @@ const AgamSearchResults = () => {
               </div>
               
               <div className="flex items-center gap-3">
-                <Button className="bg-primary hover:bg-primary/90">
+                <Button className="bg-black-btn hover:bg-black-btn/90 text-white">
                   Export Result
                 </Button>
                 <span className="text-sm text-muted-foreground">Show</span>
@@ -181,7 +181,7 @@ const AgamSearchResults = () => {
                     <p className="text-sm text-muted-foreground mb-4">{result.chapter}</p>
 
                     <Button 
-                      className="w-full bg-primary hover:bg-primary/90"
+                      className="w-full bg-black-btn hover:bg-black-btn/90 text-white"
                       onClick={() => navigate(`/search/agam/${result.id}`)}
                     >
                       View Details

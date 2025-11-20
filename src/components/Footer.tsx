@@ -28,7 +28,7 @@ const Footer = () => {
             href="https://wa.me/1234567890" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6B7C5E] hover:bg-[#7A8C6D] transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-black-btn hover:bg-black-btn/90 transition-colors"
             aria-label="WhatsApp"
           >
             <MessageCircle className="h-4 w-4 text-white" />
@@ -37,7 +37,7 @@ const Footer = () => {
             href="https://youtube.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6B7C5E] hover:bg-[#7A8C6D] transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-black-btn hover:bg-black-btn/90 transition-colors"
             aria-label="YouTube"
           >
             <Youtube className="h-4 w-4 text-white" />
@@ -46,7 +46,7 @@ const Footer = () => {
             href="https://facebook.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6B7C5E] hover:bg-[#7A8C6D] transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-black-btn hover:bg-black-btn/90 transition-colors"
             aria-label="Facebook"
           >
             <Facebook className="h-4 w-4 text-white" />
@@ -55,7 +55,7 @@ const Footer = () => {
             href="https://instagram.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6B7C5E] hover:bg-[#7A8C6D] transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-black-btn hover:bg-black-btn/90 transition-colors"
             aria-label="Instagram"
           >
             <Instagram className="h-4 w-4 text-white" />

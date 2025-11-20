@@ -28,8 +28,8 @@ export default {
           light: "hsl(50 20% 95%)",
         },
         'black-btn': {
-          DEFAULT: "hsl(0 0% 0%)",
-          foreground: "hsl(0 0% 100%)",
+          DEFAULT: "hsl(var(--black-btn))",
+          foreground: "hsl(var(--black-btn-foreground))",
         },
         gold: {
           DEFAULT: "hsl(40 70% 55%)",

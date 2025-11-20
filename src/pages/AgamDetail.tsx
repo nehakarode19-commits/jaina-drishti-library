@@ -29,7 +29,7 @@ const AgamDetail = () => {
           <div className="flex justify-center gap-2 mb-8 flex-wrap">
             <Button variant="outline" size="sm">&lt;&lt; First</Button>
             <Button variant="outline" size="sm">&lt; Back</Button>
-            <Button variant="default" size="sm" className="bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white">2</Button>
+            <Button variant="default" size="sm" className="bg-black-btn hover:bg-black-btn/90 text-white">2</Button>
             <Button variant="outline" size="sm">3</Button>
             <Button variant="outline" size="sm">4</Button>
             <Button variant="outline" size="sm">...</Button>
@@ -54,7 +54,7 @@ const AgamDetail = () => {
             {/* Tabs */}
             <Tabs defaultValue="hindi" className="w-full mb-8">
               <TabsList className="mb-6">
-                <TabsTrigger value="hindi" className="data-[state=active]:bg-[#6B7C5E] data-[state=active]:text-white">Hindi 58</TabsTrigger>
+                <TabsTrigger value="hindi" className="data-[state=active]:bg-black-btn data-[state=active]:text-white">Hindi 58</TabsTrigger>
                 <TabsTrigger value="mool">
                   Mool File Details
                   <FileDown className="h-4 w-4 ml-2" />
@@ -134,7 +134,7 @@ const AgamDetail = () => {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-semibold">Mool Sutra</h3>
-                    <Button size="sm" variant="outline" className="rounded-full border-[#5B4912] text-[#5B4912] hover:bg-[#5B4912] hover:text-white">
+                    <Button size="sm" variant="outline" className="rounded-full border-black-btn text-black-btn hover:bg-black-btn hover:text-white">
                       See Translation
                       <FileDown className="h-4 w-4 ml-2" />
                     </Button>
@@ -150,7 +150,7 @@ const AgamDetail = () => {
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-semibold">Sutra Meaning</h3>
-                    <Button size="sm" variant="outline" className="rounded-full border-[#5B4912] text-[#5B4912] hover:bg-[#5B4912] hover:text-white">
+                    <Button size="sm" variant="outline" className="rounded-full border-black-btn text-black-btn hover:bg-black-btn hover:text-white">
                       See Translation
                       <FileDown className="h-4 w-4 ml-2" />
                     </Button>

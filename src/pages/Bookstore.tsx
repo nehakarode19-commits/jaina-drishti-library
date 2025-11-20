@@ -78,14 +78,14 @@ const Bookstore = () => {
                 className="card-interactive bg-[#FEF7E7] hover:bg-[#F5E6C8] border-[#D4C5A0]"
               >
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="bg-[#8B7355] rounded-lg p-6 group-hover:scale-105 transition-transform duration-200">
+                  <div className="bg-black-btn rounded-lg p-6 group-hover:scale-105 transition-transform duration-200">
                     <BookOpen className="h-12 w-12 text-white" />
                   </div>
                   <h2 className="text-lg font-semibold text-[#4A4129] group-hover:text-[#2C2814] transition-colors">
                     {category.name}
                   </h2>
                   <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white border-2 border-[#8B7355] group-hover:border-[#6B5D3F] transition-colors">
-                    <ChevronRight className="h-5 w-5 text-[#8B7355] group-hover:text-[#6B5D3F]" />
+                    <ChevronRight className="h-5 w-5 text-black-btn group-hover:text-black-btn/80" />
                   </div>
                 </div>
               </button>

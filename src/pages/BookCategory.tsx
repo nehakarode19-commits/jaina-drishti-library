@@ -139,7 +139,7 @@ const BookCategory = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setViewMode("list")}
-                className={viewMode === "list" ? "bg-[#8B7355] text-white hover:bg-[#6B5D3F] hover:text-white" : "hover:bg-[#8B7355]/10"}
+                className={viewMode === "list" ? "bg-black-btn text-white hover:bg-black-btn/90 hover:text-white" : "hover:bg-black-btn/10"}
               >
                 <List className="h-4 w-4" />
               </Button>
@@ -147,7 +147,7 @@ const BookCategory = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setViewMode("grid")}
-                className={viewMode === "grid" ? "bg-[#8B7355] text-white hover:bg-[#6B5D3F] hover:text-white" : "hover:bg-[#8B7355]/10"}
+                className={viewMode === "grid" ? "bg-black-btn text-white hover:bg-black-btn/90 hover:text-white" : "hover:bg-black-btn/10"}
               >
                 <Grid className="h-4 w-4" />
               </Button>
@@ -170,29 +170,29 @@ const BookCategory = () => {
                 >
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
-                      <div className="bg-[#8B7355] rounded-lg p-3 w-16 h-16 flex items-center justify-center">
+                      <div className="bg-black-btn rounded-lg p-3 w-16 h-16 flex items-center justify-center">
                         <BookOpen className="h-8 w-8 text-white" />
                       </div>
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-semibold text-[#4A4129] mb-2 line-clamp-2">
+                      <h3 className="text-lg font-semibold text-foreground mb-2 line-clamp-2">
                         {book.title}
                       </h3>
-                      <div className="flex items-center gap-4 text-sm text-[#6B5D3F] mb-3">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                         <span className="font-medium">{book.sku}</span>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-[#6B5D3F] mb-3">
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
                         <span>Age: <span className="font-medium">{book.age_group || "8to9"}</span></span>
                         <span>Available: <span className="font-medium">{book.stock_quantity || 0}</span></span>
                       </div>
                       <div className="flex items-center justify-between mt-4">
-                        <p className="text-2xl font-bold text-[#8B7355]">
+                        <p className="text-2xl font-bold text-black-btn">
                           Rs.{book.price.toFixed(2)}
                         </p>
                         <Button
                           onClick={() => handleAddToCart(book)}
-                          className="bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full px-6"
+                          className="bg-black-btn hover:bg-black-btn/90 text-white rounded-full px-6"
                           disabled={!book.stock_quantity || book.stock_quantity === 0}
                         >
                           Add To Cart
@@ -217,7 +217,7 @@ const BookCategory = () => {
             <Button
               onClick={() => navigate("/buy-books")}
               variant="outline"
-              className="border-[#8B7355] text-[#8B7355] hover:bg-[#FEF7E7]"
+              className="border-black-btn text-black-btn hover:bg-black-btn/10"
             >
               Back to Categories
             </Button>

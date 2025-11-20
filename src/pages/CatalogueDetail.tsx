@@ -221,33 +221,33 @@ const CatalogueDetail = () => {
             </p>
           </div>
 
-          <div className="flex justify-between items-center mb-6 bg-[#8B7355] text-white px-4 py-3 rounded-t-lg">
+          <div className="flex justify-between items-center mb-6 bg-black-btn text-white px-4 py-3 rounded-t-lg">
             <div className="flex gap-4">
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">First</button>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">Book</button>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">1</button>
-              <button className="px-3 py-1 bg-[#6B5940] text-white rounded">2</button>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">3</button>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">4</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">First</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">Book</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">1</button>
+              <button className="px-3 py-1 bg-black-btn/80 text-white rounded">2</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">3</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">4</button>
               <span className="px-2">...</span>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">120</button>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">Next</button>
-              <button className="px-3 py-1 bg-white text-[#8B7355] rounded">Last</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">120</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">Next</button>
+              <button className="px-3 py-1 bg-white text-black-btn rounded">Last</button>
             </div>
           </div>
 
           <Card className="p-6 bg-white rounded-b-lg">
             <div className="border-b pb-4 mb-6">
-              <h2 className="text-2xl font-bold text-[#8B7355] mb-2">
+              <h2 className="text-2xl font-bold text-black-btn mb-2">
                 {catalogue.title} ({catalogue.code})
               </h2>
               <p className="text-lg text-muted-foreground">{catalogue.nativeTitle}</p>
               <div className="flex gap-3 mt-4">
-                <Button variant="outline" size="sm" className="bg-[#8B7355] text-white hover:bg-[#7A6449] border-0">
+                <Button variant="outline" size="sm" className="bg-black-btn text-white hover:bg-black-btn/90 border-0">
                   <BookOpen className="h-4 w-4 mr-2" />
                   Mool File Details
                 </Button>
-                <Button variant="outline" size="sm" className="bg-[#8B7355] text-white hover:bg-[#7A6449] border-0">
+                <Button variant="outline" size="sm" className="bg-black-btn text-white hover:bg-black-btn/90 border-0">
                   <FileText className="h-4 w-4 mr-2" />
                   Anuvad File Details
                 </Button>
@@ -256,71 +256,71 @@ const CatalogueDetail = () => {
 
             <div className="grid md:grid-cols-4 gap-6 mb-6 bg-[#F5F1E8] p-4 rounded-lg">
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Mool Language</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Mool Language</h3>
                 <p className="text-sm font-medium">{catalogue.moolLanguage}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Translated Language</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Translated Language</h3>
                 <p className="text-sm font-medium">{catalogue.translatedLanguage}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Gatha or Sutra</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Gatha or Sutra</h3>
                 <p className="text-sm font-medium">Sutra</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Sutra Number</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Sutra Number</h3>
                 <p className="text-sm font-medium">{catalogue.sutraNumber}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Chapter</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Chapter</h3>
                 <p className="text-sm font-medium">{catalogue.chapter}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Translated Chapter</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Translated Chapter</h3>
                 <p className="text-sm font-medium">{catalogue.translatedChapter}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Section</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Section</h3>
                 <p className="text-sm font-medium">{catalogue.section}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Translated Section</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Translated Section</h3>
                 <p className="text-sm font-medium">{catalogue.translatedSection}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Category</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Category</h3>
                 <p className="text-sm font-medium">{catalogue.category}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Sutra Anuyog</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Sutra Anuyog</h3>
                 <p className="text-sm font-medium">{catalogue.sutraAnuyog}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Author</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Author</h3>
                 <p className="text-sm font-medium">{catalogue.author}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Original Author</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Original Author</h3>
                 <p className="text-sm font-medium">{catalogue.originalAuthor}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Century</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Century</h3>
                 <p className="text-sm font-medium">{catalogue.century}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Source</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Source</h3>
                 <p className="text-sm font-medium">{catalogue.source}</p>
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-[#6B5940] mb-1">Sect</h3>
+                <h3 className="font-semibold text-sm text-black-btn mb-1">Sect</h3>
                 <p className="text-sm font-medium">{catalogue.sect}</p>
               </div>
             </div>
 
             <div className="mb-8">
-              <div className="flex justify-between items-center mb-3 bg-[#E8DCC8] px-4 py-2 rounded border-l-4 border-[#8B7355]">
-                <h3 className="font-semibold text-lg text-[#6B5940]">Mool Sutra</h3>
-                <Button variant="ghost" size="sm" className="text-[#8B7355] hover:text-[#6B5940]">
+              <div className="flex justify-between items-center mb-3 bg-[#E8DCC8] px-4 py-2 rounded border-l-4 border-black-btn">
+                <h3 className="font-semibold text-lg text-black-btn">Mool Sutra</h3>
+                <Button variant="ghost" size="sm" className="text-black-btn hover:text-black-btn/80">
                   <Eye className="h-4 w-4 mr-2" />
                   See Translation
                 </Button>
@@ -331,9 +331,9 @@ const CatalogueDetail = () => {
             </div>
 
             <div>
-              <div className="flex justify-between items-center mb-3 bg-[#E8DCC8] px-4 py-2 rounded border-l-4 border-[#8B7355]">
-                <h3 className="font-semibold text-lg text-[#6B5940]">Sutra Meaning</h3>
-                <Button variant="ghost" size="sm" className="text-[#8B7355] hover:text-[#6B5940]">
+              <div className="flex justify-between items-center mb-3 bg-[#E8DCC8] px-4 py-2 rounded border-l-4 border-black-btn">
+                <h3 className="font-semibold text-lg text-black-btn">Sutra Meaning</h3>
+                <Button variant="ghost" size="sm" className="text-black-btn hover:text-black-btn/80">
                   <Eye className="h-4 w-4 mr-2" />
                   See Translation
                 </Button>
