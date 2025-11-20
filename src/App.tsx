@@ -6,6 +6,8 @@ import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import GlobalSearch from "./pages/GlobalSearch";
 import AgamSearch from "./pages/AgamSearch";
+import AgamSearchResults from "./pages/AgamSearchResults";
+import AgamDetail from "./pages/AgamDetail";
 import AdvancedSearch from "./pages/AdvancedSearch";
 import BookDetail from "./pages/BookDetail";
 import Bookstore from "./pages/Bookstore";
@@ -35,7 +37,9 @@ const App = () => (
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/search" element={<GlobalSearch />} />
-        <Route path="/agam-search" element={<AgamSearch />} />
+        <Route path="/search/agam" element={<AgamSearch />} />
+        <Route path="/search/agam/results" element={<AgamSearchResults />} />
+        <Route path="/search/agam/:id" element={<AgamDetail />} />
         <Route path="/advanced-search" element={<AdvancedSearch />} />
         <Route path="/book/:id" element={<BookDetail />} />
         <Route path="/bookstore" element={<Bookstore />} />
