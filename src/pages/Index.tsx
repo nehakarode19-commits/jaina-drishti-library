@@ -126,14 +126,14 @@ const Index = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-16 px-4 overflow-hidden bg-gradient-to-b from-secondary/30 to-background">
+      <section className="relative py-16 px-4 overflow-hidden bg-[#F5E6D3]">
         <div className="container relative z-10">
           <div className="max-w-5xl mx-auto text-center space-y-6 animate-fade-in-up">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight">
               Welcome to the new Jain E -Library site.
             </h1>
             
-            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               Publishers Global Search for JAIN Books, Manuscript, Literature, Seminar, Memorabilia, Dictionary, Magazines & Articles
             </p>
 
