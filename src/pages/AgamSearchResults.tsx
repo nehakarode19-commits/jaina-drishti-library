@@ -5,7 +5,25 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { BookOpen, Grid3x3, List, Search } from "lucide-react";
+
+const scriptureNames = [
+  { id: "1", srNo: "01", name: "Acharang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "2", srNo: "02", name: "Sutrakrutang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "3", srNo: "03", name: "Sthanang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "4", srNo: "04", name: "Samavayang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "5", srNo: "05", name: "Bhagavati", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "6", srNo: "06", name: "Gyatadharmakatha", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "7", srNo: "07", name: "Upasakdashang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "8", srNo: "08", name: "Antkruddashang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "9", srNo: "09", name: "Anuttaropapaticdashang", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "10", srNo: "10", name: "Prashanavyakaran", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "11", srNo: "11", name: "Vipaksutra", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "12", srNo: "12", name: "Auppatik", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "13", srNo: "13", name: "Rajprashniya", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+  { id: "14", srNo: "14", name: "Jivajivabhigam", moolLanguage: "Ardha-Magadhi", translatedLanguage: "Hindi" },
+];
 
 const sampleResults = [
   {
@@ -58,8 +76,9 @@ const AgamSearchResults = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [query, setQuery] = useState(searchParams.get("q") || "");
-  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const [viewMode, setViewMode] = useState<"grid" | "list">("list");
   const [resultsPerPage, setResultsPerPage] = useState("20");
+  const isAdvancedSearch = searchParams.get("advanced") === "true";
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,6 +87,108 @@ const AgamSearchResults = () => {
     }
   };
 
+  // If advanced search (scripture names table view)
+  if (isAdvancedSearch) {
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <Header />
+        
+        <main className="flex-1 py-8 px-4">
+          <div className="container max-w-7xl">
+            <div className="text-center mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                Agam Search Scripture Names
+              </h1>
+            </div>
+
+            <div className="mb-6 text-sm text-muted-foreground">
+              Showing Results 1 to {scriptureNames.length}
+            </div>
+
+            <div className="bg-card rounded-lg shadow-sm border overflow-hidden">
+              <div className="bg-[#8B7355] text-white p-4 flex justify-between items-center">
+                <div className="flex items-center gap-4">
+                  <span className="font-semibold">Scripture Names</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Button 
+                    size="sm" 
+                    className="bg-[#6B5940] hover:bg-[#5B4930] text-white h-8"
+                  >
+                    Export Result
+                  </Button>
+                  <Select value={resultsPerPage} onValueChange={setResultsPerPage}>
+                    <SelectTrigger className="w-20 h-8 bg-white text-foreground">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="20">20</SelectItem>
+                      <SelectItem value="50">50</SelectItem>
+                      <SelectItem value="100">100</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <div className="flex gap-2">
+                    <Button
+                      variant={viewMode === "list" ? "secondary" : "ghost"}
+                      size="icon"
+                      className="h-8 w-8 text-white"
+                      onClick={() => setViewMode("list")}
+                    >
+                      <List className="h-4 w-4" />
+                    </Button>
+                    <Button
+                      variant={viewMode === "grid" ? "secondary" : "ghost"}
+                      size="icon"
+                      className="h-8 w-8 text-white"
+                      onClick={() => setViewMode("grid")}
+                    >
+                      <Grid3x3 className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-muted/50">
+                    <TableHead className="w-24 font-semibold text-foreground">SR NO</TableHead>
+                    <TableHead className="font-semibold text-foreground">SCRIPTURE NAME</TableHead>
+                    <TableHead className="font-semibold text-foreground">MOOL LANGUAGE</TableHead>
+                    <TableHead className="font-semibold text-foreground">TRANSLATED LANGUAGE</TableHead>
+                    <TableHead className="w-36 font-semibold text-foreground">ACTION</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {scriptureNames.map((scripture) => (
+                    <TableRow key={scripture.id}>
+                      <TableCell className="font-medium">{scripture.srNo}</TableCell>
+                      <TableCell>{scripture.name}</TableCell>
+                      <TableCell>{scripture.moolLanguage}</TableCell>
+                      <TableCell>{scripture.translatedLanguage}</TableCell>
+                      <TableCell>
+                        <Button
+                          size="sm"
+                          className="bg-[#5B4912] hover:bg-[#4B3902] text-white h-8 px-4"
+                          onClick={() => navigate(`/search/agam/${scripture.id}`)}
+                        >
+                          View Details
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
+
+
+  // Regular search results view
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-background to-muted/20">
       <Header />
@@ -193,10 +314,11 @@ const AgamSearchResults = () => {
           </div>
 
           <div className="flex justify-center gap-2">
-            <Button variant="outline" size="icon">&lt;</Button>
-            <Button variant="default" size="icon">1</Button>
-            <Button variant="outline" size="icon">2</Button>
-            <Button variant="outline" size="icon">&gt;</Button>
+            <Button variant="outline" size="sm">Previous</Button>
+            <Button variant="default" size="sm">1</Button>
+            <Button variant="outline" size="sm">2</Button>
+            <Button variant="outline" size="sm">3</Button>
+            <Button variant="outline" size="sm">Next</Button>
           </div>
         </div>
       </main>
