@@ -27,6 +27,7 @@ import BookCategory from "./pages/BookCategory";
 import Cart from "./pages/Cart";
 import CatalogueDetail from "./pages/CatalogueDetail";
 import MagazineList from "./pages/MagazineList";
+import MagazineDetail from "./pages/MagazineDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
         <Route path="/request-upload" element={<RequestUpload />} />
         <Route path="/catalogue/:catalogueId" element={<CatalogueDetail />} />
         <Route path="/magazines" element={<MagazineList />} />
+        <Route path="/magazines/detail" element={<MagazineDetail />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>
