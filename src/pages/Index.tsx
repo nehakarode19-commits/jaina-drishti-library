@@ -143,37 +143,37 @@ const Index = () => {
 
             {/* Search Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-2 pt-4">
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=title">Search By Title</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=author">Search By Author</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=category">Search by Category</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=keyword">Search By Keyword</Link>
               </Button>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=publisher">Search By Publisher</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=all">Search by All fields</Link>
               </Button>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=quantum">Search By Quantum</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=agam">Search Agam</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-black-btn hover:text-white hover:border-black-btn">
                 <Link to="/global-search?filter=ocr">Search OCR Content</Link>
               </Button>
             </div>
