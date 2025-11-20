@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
+import { supabase } from "@/integrations/supabase/client";
+import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 import {
   NavigationMenu,
@@ -15,6 +17,23 @@ import {
 const Header = () => {
   const { getTotalItems } = useCart();
   const cartItemCount = getTotalItems();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check initial auth state
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setIsLoggedIn(!!session);
+    };
+    checkAuth();
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setIsLoggedIn(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-primary shadow-sm">
@@ -116,14 +135,17 @@ const Header = () => {
               )}
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" asChild className="text-white hover:text-gold hover:bg-white/10">
-            <Link to="/profile">
-              <User className="h-5 w-5" />
-            </Link>
-          </Button>
-          <Button asChild variant="dark">
-            <Link to="/login">Sign In</Link>
-          </Button>
+          {isLoggedIn ? (
+            <Button variant="ghost" size="icon" asChild className="text-white hover:text-gold hover:bg-white/10">
+              <Link to="/profile">
+                <User className="h-5 w-5" />
+              </Link>
+            </Button>
+          ) : (
+            <Button asChild variant="dark">
+              <Link to="/login">Sign In</Link>
+            </Button>
+          )}
         </div>
       </div>
     </header>
