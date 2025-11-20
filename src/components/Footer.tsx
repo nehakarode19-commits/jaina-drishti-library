@@ -3,7 +3,7 @@ import { Book, MessageCircle, Mail, Facebook, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t bg-gradient-to-b from-[#2C3E2E] to-[#1F2B20] text-white">
+    <footer className="border-t bg-[#3D4A3A] text-white">
       <div className="container py-12">
         {/* Logo and Text */}
         <div className="flex flex-col items-center mb-8 space-y-4">
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="text-center text-sm text-white/70 border-t border-white/10 pt-6">
+        <div className="text-center text-sm text-white -mx-8 -mb-12 mt-8 px-8 py-6 bg-[#8B9B7A]">
           <p>Copyright © Jain Education International. All rights reserved. | <Link to="/about" className="hover:text-white transition-colors">Privacy Policy</Link></p>
         </div>
       </div>
