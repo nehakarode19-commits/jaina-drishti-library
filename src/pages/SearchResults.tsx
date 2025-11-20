@@ -14,10 +14,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const sampleResults = [
-  { id: "1", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Hindi", moolId: "Ang-01", sutraNumber: "139", type: "Sutra", chapter: "सूत्रकृतांग-१ अयलयंग-४ अनुवोयसार" },
-  { id: "2", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Sanskrit", moolId: "Mool-02", sutraNumber: "10", type: "Sutra", chapter: "आचारांग-५ दसवें गाथा" },
-  { id: "3", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Hindi", moolId: "Mool-03", sutraNumber: "57", type: "Sutra", chapter: "आयारंग-२ प्रयाशरत" },
+const allResults = [
+  { id: "1", title: "Aavashyakasutra", nativeTitle: "आवश्यक सूत्र", language: "Hindi", moolLanguage: "Ardha-Magadhi", moolId: "Mool-01", sutraNumber: "32", type: "Sutra", chapter: "आयलयंग-४ प्रतिक्रमण", searchableText: "aavashyakasutra आवश्यक समयक" },
+  { id: "2", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Sanskrit", moolLanguage: "Prakrit", moolId: "Mool-02", sutraNumber: "10", type: "Sutra", chapter: "आचारांग-५ दसवें गाथा", searchableText: "acharang आचारांग समयक" },
+  { id: "3", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Hindi", moolLanguage: "Ardha-Magadhi", moolId: "Mool-03", sutraNumber: "57", type: "Sutra", chapter: "आयारंग-२ प्रयाशरत", searchableText: "acharang आचारांग समयक प्रयाशरत" },
+  { id: "4", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Sanskrit", moolLanguage: "Prakrit", moolId: "Mool-04", sutraNumber: "12", type: "Sutra", chapter: "आयलयंग-३ सूत्र ज्ञान", searchableText: "acharang आचारांग समयक" },
+  { id: "5", title: "Acharang", nativeTitle: "आचारांग सूत्र", language: "Hindi", moolLanguage: "Ardha-Magadhi", moolId: "Mool-05", sutraNumber: "21", type: "Sutra", chapter: "आयलयंग-१ अनुवोयन", searchableText: "acharang आचारांग समयक अनुवोयन" },
+  { id: "6", title: "Sutrakritanga", nativeTitle: "सूत्रकृतांग सूत्र", language: "Hindi", moolLanguage: "Ardha-Magadhi", moolId: "Ang-02", sutraNumber: "45", type: "Sutra", chapter: "सूत्रकृतांग-२ धर्म विचार", searchableText: "sutrakritanga सूत्रकृतांग समयक धर्म" },
+  { id: "7", title: "Sthananga", nativeTitle: "स्थानांग सूत्र", language: "Sanskrit", moolLanguage: "Prakrit", moolId: "Ang-03", sutraNumber: "89", type: "Sutra", chapter: "स्थानांग-१ प्रथम स्थान", searchableText: "sthananga स्थानांग समयक" },
+  { id: "8", title: "Samavayanga", nativeTitle: "समवायांग सूत्र", language: "Hindi", moolLanguage: "Ardha-Magadhi", moolId: "Ang-04", sutraNumber: "34", type: "Sutra", chapter: "समवायांग-३ त्रिविध समवाय", searchableText: "samavayanga समवायांग समयक" },
 ];
 
 const SearchResults = () => {
@@ -25,9 +30,15 @@ const SearchResults = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState(searchParams.get("q") || "");
   const [viewMode, setViewMode] = useState<"grid" | "list">("list");
-  const [results, setResults] = useState(sampleResults);
   const [showCount, setShowCount] = useState(20);
   const filter = searchParams.get("filter") || "all";
+
+  // Filter results based on search query
+  const results = query.trim() 
+    ? allResults.filter(r => 
+        r.searchableText.toLowerCase().includes(query.toLowerCase())
+      )
+    : allResults;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
