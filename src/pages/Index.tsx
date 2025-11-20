@@ -87,16 +87,18 @@ const magazines = [
 
 const catalogues = [
   {
+    id: "031001",
     title: "Parshvanath Vidyapith Catalogue",
-    subtitle: "Parshvanath Vidyapith",
+    publisher: "Parshvanath Vidyapith",
     code: "031001",
     pages: 88,
     downloads: 0,
     link: "/catalogue/031001"
   },
   {
+    id: "031002",
     title: "Prochya Vidyapith Catalogue",
-    subtitle: "Parshvanath Vidyapith",
+    publisher: "Parshvanath Vidyapith",
     code: "031002",
     pages: 92,
     downloads: 0,
@@ -349,8 +351,8 @@ const Index = () => {
       </section>
 
       {/* Other Links */}
-      <section className="py-12 px-4 bg-background">
-        <div className="container">
+      <section className="page-section">
+        <div className="page-container">
           <h2 className="text-3xl font-bold mb-8">Other Links</h2>
           <Tabs defaultValue="catalogues" className="w-full">
             <TabsList className="mb-6">
@@ -359,9 +361,9 @@ const Index = () => {
             </TabsList>
             
             <TabsContent value="catalogues">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+              <div className="grid-cards-2">
                 {catalogues.map((catalogue, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <Card key={index} className="card-interactive">
                     <CardContent className="p-6">
                       <div className="flex gap-4">
                         <div className="h-16 w-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -369,7 +371,7 @@ const Index = () => {
                         </div>
                         <div className="flex-1 space-y-2">
                           <h3 className="font-semibold text-lg">{catalogue.title}</h3>
-                          <p className="text-sm text-muted-foreground">{catalogue.subtitle}</p>
+                          <p className="text-sm text-muted-foreground">{catalogue.publisher}</p>
                           <div className="flex items-center gap-4 text-xs text-muted-foreground">
                             <span>{catalogue.code}</span>
                             <span>Total Pages: {catalogue.pages}</span>
