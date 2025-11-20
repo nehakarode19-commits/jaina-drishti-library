@@ -10,6 +10,8 @@ import AdvancedSearch from "./pages/AdvancedSearch";
 import BookDetail from "./pages/BookDetail";
 import Bookstore from "./pages/Bookstore";
 import Donate from "./pages/Donate";
+import DonateForm from "./pages/DonateForm";
+import DonateFillForm from "./pages/DonateFillForm";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import About from "./pages/About";
@@ -41,6 +43,8 @@ const App = () => (
         <Route path="/buy-books/:slug" element={<BookCategory />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/donate" element={<Donate />} />
+        <Route path="/donate/form" element={<DonateForm />} />
+        <Route path="/donate/fill-form" element={<DonateFillForm />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
