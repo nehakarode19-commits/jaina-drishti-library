@@ -57,37 +57,42 @@ const Cart = () => {
 
       <main className="flex-1 py-8 px-4">
         <div className="container max-w-7xl">
-          <h1 className="text-4xl font-bold mb-8 text-center">My Cart</h1>
+          <h1 className="text-4xl font-bold mb-8 text-center text-foreground">My Cart</h1>
 
-          {/* Steps */}
-          <div className="flex justify-center gap-4 mb-8">
-            <Button
-              variant={step === "shipping" ? "default" : "outline"}
-              className={step === "shipping" ? "bg-[#8B7355]" : ""}
-            >
-              1. Shipping
-            </Button>
-            <Button
-              variant={step === "payment" ? "default" : "outline"}
-              className={step === "payment" ? "bg-[#8B7355]" : ""}
-            >
-              2. Payment
-            </Button>
-            <Button
-              variant={step === "confirmation" ? "default" : "outline"}
-              className={step === "confirmation" ? "bg-[#8B7355]" : ""}
-            >
-              3. Confirmation
-            </Button>
+          {/* Checkout Section Label */}
+          <div className="mb-6">
+            <h2 className="text-2xl font-semibold text-foreground">Checkout</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Left Column - Forms */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-3">
+              {/* Steps */}
+              <div className="flex gap-3 mb-6">
+                <Button
+                  onClick={() => setStep("shipping")}
+                  className={step === "shipping" ? "bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full" : "bg-white text-[#8B7355] border-[#8B7355] hover:bg-[#8B7355]/10 rounded-full"}
+                >
+                  <span className="mr-2">✓</span> Shipping
+                </Button>
+                <Button
+                  onClick={() => step !== "shipping" && setStep("payment")}
+                  disabled={step === "shipping"}
+                  className={step === "payment" ? "bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full" : "bg-white text-[#8B7355] border-[#8B7355] hover:bg-[#8B7355]/10 rounded-full"}
+                >
+                  <span className="mr-2">✓</span> Payment
+                </Button>
+                <Button
+                  disabled
+                  className={step === "confirmation" ? "bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full" : "bg-white text-muted-foreground border-muted rounded-full"}
+                >
+                  <span className="mr-2">○</span> Confirmation
+                </Button>
+              </div>
+
               {step === "shipping" && (
-                <div className="bg-white rounded-lg border border-[#D4C5A0] p-6">
-                  <h2 className="text-xl font-bold mb-4">Checkout</h2>
-                  <h3 className="text-lg font-semibold mb-4">Permanent Address</h3>
+                <div className="bg-white rounded-xl border border-[#D4C5A0] p-8 shadow-sm">
+                  <h3 className="text-lg font-semibold mb-6 text-foreground">Permanent Address</h3>
                   
                   <div className="space-y-4">
                     <div>
@@ -155,7 +160,7 @@ const Cart = () => {
 
                     <Button
                       onClick={handleContinue}
-                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white"
+                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full py-6 text-lg font-semibold mt-6"
                     >
                       Continue
                     </Button>
@@ -164,12 +169,11 @@ const Cart = () => {
               )}
 
               {step === "payment" && (
-                <div className="bg-white rounded-lg border border-[#D4C5A0] p-6">
-                  <h2 className="text-xl font-bold mb-4">Checkout</h2>
+                <div className="bg-white rounded-xl border border-[#D4C5A0] p-8 shadow-sm">
+                  <h3 className="text-lg font-semibold mb-6 text-foreground">Payment Methods</h3>
                   
                   <div className="space-y-6">
                     <div>
-                      <h3 className="text-lg font-semibold mb-4">Payment Methods</h3>
                       <RadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
                         <div className="flex items-center space-x-2 mb-2">
                           <RadioGroupItem value="card" id="card" />
@@ -228,9 +232,61 @@ const Cart = () => {
 
                     <Button
                       onClick={handleContinue}
-                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white"
+                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full py-6 text-lg font-semibold mt-6"
                     >
                       Continue
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {step === "confirmation" && (
+                <div className="bg-white rounded-xl border border-[#D4C5A0] p-8 shadow-sm">
+                  <h3 className="text-lg font-semibold mb-6 text-foreground">Payment Option</h3>
+                  
+                  <div className="space-y-6">
+                    <div className="border border-[#D4C5A0] rounded-lg p-4">
+                      <div className="flex items-center gap-2 mb-4">
+                        <input type="radio" checked readOnly className="w-4 h-4" />
+                        <span className="font-medium">Master Card ending in **** **** 7106</span>
+                        <span className="ml-auto bg-[#8B7355] text-white text-xs px-2 py-1 rounded">Default</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">Expiry on 06/26</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-2">Client Details</h4>
+                      <p>Mehek Manikant Shah</p>
+                      <p className="text-sm text-muted-foreground">Phone No : 9856478562</p>
+                      <p className="text-sm text-muted-foreground">Email ID : mehek12@gmail.com</p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-2">Shipping Address</h4>
+                      <p className="text-sm text-muted-foreground">
+                        700, Fremont Street<br />
+                        Fremont Street Experience, Downtown<br />
+                        Las Vegas<br />
+                        89101
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold mb-2">Estimated Delivery</h4>
+                      <p className="text-sm text-muted-foreground">March 18, 2024</p>
+                    </div>
+
+                    <Button
+                      onClick={() => {
+                        toast({
+                          title: "Order Confirmed",
+                          description: "Thank you for your order!",
+                        });
+                        navigate("/");
+                      }}
+                      className="w-full bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full py-6 text-lg font-semibold mt-6"
+                    >
+                      Order Now
                     </Button>
                   </div>
                 </div>
@@ -238,50 +294,49 @@ const Cart = () => {
             </div>
 
             {/* Right Column - Order Summary */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg border border-[#D4C5A0] p-6 sticky top-4">
-                <h2 className="text-xl font-bold mb-6">Order Summary</h2>
+            <div className="lg:col-span-2">
+              <div className="bg-[#E8F5E9] rounded-xl border border-[#C8E6C9] p-6 sticky top-24">
+                <h2 className="text-xl font-semibold mb-6 text-foreground">Order Summary</h2>
 
-                <div className="space-y-4">
+                <div className="space-y-4 mb-6">
                   {items.map((item) => (
-                    <div key={item.id} className="flex gap-4 pb-4 border-b border-[#D4C5A0]">
-                      <div className="bg-[#8B7355] rounded-lg p-3 w-16 h-16 flex items-center justify-center flex-shrink-0">
-                        <BookOpen className="h-8 w-8 text-white" />
+                    <div key={item.id} className="flex gap-4 p-4 bg-white rounded-lg border border-[#D4C5A0]">
+                      <div className="bg-[#8B7355] rounded-lg p-3 w-14 h-14 flex items-center justify-center flex-shrink-0">
+                        <BookOpen className="h-7 w-7 text-white" />
                       </div>
-                      
                       <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-sm mb-1 truncate">{item.title}</h3>
-                        <p className="text-lg font-bold text-[#4A4129]">
+                        <h3 className="font-semibold text-base mb-2 text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-xl font-bold text-[#8B7355] mb-3">
                           Rs.{item.price.toFixed(2)}
                         </p>
-                        
-                        <div className="flex items-center gap-2 mt-2">
+                        <div className="flex items-center gap-2">
                           <Button
-                            size="icon"
                             variant="outline"
-                            className="h-6 w-6"
+                            size="icon"
+                            className="h-8 w-8 border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355]/10"
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           >
                             <Minus className="h-3 w-3" />
                           </Button>
-                          <span className="text-sm font-medium w-8 text-center">
+                          <span className="w-8 text-center font-bold text-foreground">
                             {item.quantity}
                           </span>
                           <Button
-                            size="icon"
                             variant="outline"
-                            className="h-6 w-6"
+                            size="icon"
+                            className="h-8 w-8 border-[#8B7355] text-[#8B7355] hover:bg-[#8B7355]/10"
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
                         </div>
                       </div>
-
                       <Button
-                        size="icon"
                         variant="ghost"
-                        className="h-8 w-8 text-destructive"
+                        size="icon"
+                        className="h-8 w-8 text-destructive hover:bg-destructive/10 self-start"
                         onClick={() => removeFromCart(item.id)}
                       >
                         <Trash2 className="h-4 w-4" />
@@ -290,21 +345,20 @@ const Cart = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span>Subtotal</span>
-                    <span className="font-semibold">Rs.{subtotal.toFixed(2)}</span>
+                <div className="space-y-3 pt-4 border-t-2 border-[#C8E6C9]">
+                  <div className="flex justify-between text-base">
+                    <span className="text-foreground">Subtotal</span>
+                    <span className="font-bold text-foreground">Rs.{subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span>
-                      Shipping{" "}
-                      <button className="text-primary underline text-xs">View Details</button>
+                  <div className="flex justify-between text-base">
+                    <span className="text-foreground">
+                      Shipping <button className="text-[#8B7355] underline font-medium">View Details</button>
                     </span>
-                    <span className="font-semibold">Rs.{shippingCost.toFixed(2)}</span>
+                    <span className="font-bold text-foreground">Rs.{shippingCost.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-lg font-bold pt-2 border-t border-[#D4C5A0]">
-                    <span>Grand Total</span>
-                    <span>Rs.{total.toFixed(2)}</span>
+                  <div className="flex justify-between text-xl font-bold pt-4 border-t-2 border-[#C8E6C9]">
+                    <span className="text-foreground">Grand Total</span>
+                    <span className="text-[#8B7355]">Rs.{total.toFixed(2)}</span>
                   </div>
                 </div>
               </div>
