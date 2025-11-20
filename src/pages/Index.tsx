@@ -264,7 +264,7 @@ const Index = () => {
             <TabsList className="mb-6 flex-wrap h-auto">
               <TabsTrigger value="paryushan">Paryushan and Rituals</TabsTrigger>
               <TabsTrigger value="jaina">JAINA Education Books</TabsTrigger>
-              <TabsTrigger value="sandhya" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Sandhya Books and Scriptures</TabsTrigger>
+              <TabsTrigger value="sandhya" className="data-[state=active]:bg-black-btn data-[state=active]:text-white">Sandhya Books and Scriptures</TabsTrigger>
               <TabsTrigger value="jain-books">Jain Books in Unicode</TabsTrigger>
             </TabsList>
             
@@ -309,7 +309,7 @@ const Index = () => {
               <TabsTrigger value="dictionary">Dictionary Collection</TabsTrigger>
               <TabsTrigger value="articles">Jain Articles</TabsTrigger>
               <TabsTrigger value="manuscripts">Jain Manuscripts</TabsTrigger>
-              <TabsTrigger value="magazines" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Jain Magazine</TabsTrigger>
+              <TabsTrigger value="magazines" className="data-[state=active]:bg-black-btn data-[state=active]:text-white">Jain Magazine</TabsTrigger>
               <TabsTrigger value="multimedia">Multimedia</TabsTrigger>
             </TabsList>
             
