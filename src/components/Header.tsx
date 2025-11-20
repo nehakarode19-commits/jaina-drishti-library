@@ -19,14 +19,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-primary shadow-sm">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="flex items-center gap-2">
-            <img src={logo} alt="Jain eLibrary Logo" className="h-12 w-auto" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-lg font-bold font-serif tracking-tight text-white">Jain eLibrary</span>
-            <span className="text-xs text-white/80 font-medium">जैन ई-पुस्तकालय</span>
-          </div>
+        <Link to="/" className="flex items-center group">
+          <img src={logo} alt="Jain eLibrary Logo" className="h-12 w-auto" />
         </Link>
 
         <NavigationMenu className="hidden md:flex">
