@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Book, User, ChevronDown } from "lucide-react";
+import { Book, User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/contexts/CartContext";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,6 +12,9 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const Header = () => {
+  const { getTotalItems } = useCart();
+  const cartItemCount = getTotalItems();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-primary shadow-sm">
       <div className="container flex h-16 items-center justify-between">
@@ -107,6 +111,16 @@ const Header = () => {
         </NavigationMenu>
 
         <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon" asChild className="text-white hover:text-gold hover:bg-white/10 relative">
+            <Link to="/cart">
+              <ShoppingCart className="h-5 w-5" />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-gold text-primary text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItemCount}
+                </span>
+              )}
+            </Link>
+          </Button>
           <Button variant="ghost" size="icon" asChild className="text-white hover:text-gold hover:bg-white/10">
             <Link to="/profile">
               <User className="h-5 w-5" />

@@ -133,23 +133,25 @@ const BookCategory = () => {
           </div>
 
           {/* View Toggle */}
-          <div className="flex justify-end items-center gap-2 mb-6">
-            <Button
-              variant={viewMode === "grid" ? "default" : "outline"}
-              size="icon"
-              onClick={() => setViewMode("grid")}
-              className="bg-[#8B7355] hover:bg-[#6B5D3F]"
-            >
-              <Grid className="h-4 w-4" />
-            </Button>
-            <Button
-              variant={viewMode === "list" ? "default" : "outline"}
-              size="icon"
-              onClick={() => setViewMode("list")}
-              className="bg-[#8B7355] hover:bg-[#6B5D3F]"
-            >
-              <List className="h-4 w-4" />
-            </Button>
+          <div className="flex justify-end mb-6">
+            <div className="flex gap-1 bg-white rounded-lg p-1 border border-[#8B7355]/20 shadow-sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setViewMode("list")}
+                className={viewMode === "list" ? "bg-[#8B7355] text-white hover:bg-[#6B5D3F] hover:text-white" : "hover:bg-[#8B7355]/10"}
+              >
+                <List className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setViewMode("grid")}
+                className={viewMode === "grid" ? "bg-[#8B7355] text-white hover:bg-[#6B5D3F] hover:text-white" : "hover:bg-[#8B7355]/10"}
+              >
+                <Grid className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
 
           {/* Books Grid/List */}
@@ -157,54 +159,45 @@ const BookCategory = () => {
             <div
               className={
                 viewMode === "grid"
-                  ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                  ? "grid grid-cols-1 md:grid-cols-2 gap-6"
                   : "space-y-4"
               }
             >
               {books.map((book) => (
                 <div
                   key={book.id}
-                  className="bg-white rounded-lg border border-[#D4C5A0] overflow-hidden hover:shadow-md transition-shadow"
+                  className="bg-[#FEF7E7] rounded-lg border border-[#D4C5A0] p-6 hover:shadow-lg transition-all duration-200"
                 >
-                  <div className="p-6">
-                    {/* Book Icon */}
-                    <div className="bg-[#8B7355] rounded-lg p-4 w-16 h-16 flex items-center justify-center mb-4">
-                      <BookOpen className="h-8 w-8 text-white" />
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="bg-[#8B7355] rounded-lg p-3 w-16 h-16 flex items-center justify-center">
+                        <BookOpen className="h-8 w-8 text-white" />
+                      </div>
                     </div>
 
-                    {/* Book Details */}
-                    <div className="space-y-2 mb-4">
-                      <h3 className="font-semibold text-lg text-foreground">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-semibold text-[#4A4129] mb-2 line-clamp-2">
                         {book.title}
                       </h3>
-                      <div className="flex items-center justify-between text-sm text-muted-foreground">
-                        <span>SKU: {book.sku}</span>
-                        <span className="text-right">{book.sku}</span>
+                      <div className="flex items-center gap-4 text-sm text-[#6B5D3F] mb-3">
+                        <span className="font-medium">{book.sku}</span>
                       </div>
-                      {book.age_group && (
-                        <p className="text-sm text-muted-foreground">
-                          {book.age_group}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Price and Action */}
-                    <div className="flex items-center justify-between pt-4 border-t border-[#D4C5A0]">
-                      <div>
-                        <p className="text-2xl font-bold text-[#4A4129]">
+                      <div className="flex items-center gap-4 text-sm text-[#6B5D3F] mb-3">
+                        <span>Age: <span className="font-medium">{book.age_group || "8to9"}</span></span>
+                        <span>Available: <span className="font-medium">{book.stock_quantity || 0}</span></span>
+                      </div>
+                      <div className="flex items-center justify-between mt-4">
+                        <p className="text-2xl font-bold text-[#8B7355]">
                           Rs.{book.price.toFixed(2)}
                         </p>
-                        <p className="text-xs text-muted-foreground">
-                          {book.availability}
-                        </p>
+                        <Button
+                          onClick={() => handleAddToCart(book)}
+                          className="bg-[#8B7355] hover:bg-[#6B5D3F] text-white rounded-full px-6"
+                          disabled={!book.stock_quantity || book.stock_quantity === 0}
+                        >
+                          Add To Cart
+                        </Button>
                       </div>
-                      <Button
-                        onClick={() => handleAddToCart(book)}
-                        disabled={book.stock_quantity === 0}
-                        className="bg-[#5C5133] hover:bg-[#4A4129] text-white rounded-full px-6"
-                      >
-                        Add to Cart
-                      </Button>
                     </div>
                   </div>
                 </div>
