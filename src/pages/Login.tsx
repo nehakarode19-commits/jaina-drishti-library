@@ -33,6 +33,7 @@ const Login = () => {
   const { toast } = useToast();
   const [searchParams] = useSearchParams();
   const returnUrl = searchParams.get("returnUrl") || "/";
+  const defaultTab = searchParams.get("tab") || "login";
 
   // Check if user is already logged in
   useEffect(() => {
@@ -143,7 +144,7 @@ const Login = () => {
               <h1 className="text-3xl font-bold text-[#2E7D32] mb-2">Welcome to Jain E-Library</h1>
             </div>
 
-            <Tabs defaultValue="login" className="w-full">
+            <Tabs defaultValue={defaultTab} className="w-full">
               <TabsList className="grid w-full grid-cols-2 mb-6 bg-muted/30">
                 <TabsTrigger value="login" className="data-[state=active]:bg-white">Login</TabsTrigger>
                 <TabsTrigger value="signup" className="data-[state=active]:bg-white">Sign Up</TabsTrigger>
