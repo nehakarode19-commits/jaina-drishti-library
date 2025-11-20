@@ -65,10 +65,10 @@ const stats = [
 ];
 
 const educationBooks = [
-  { title: "Ship Jaina Education Books – in USA", link: "/bookstore?region=usa" },
-  { title: "Ship Jaina Education Books – in India", link: "/bookstore?region=india" },
-  { title: "Ship Jaina Education Books – in Other Countries", link: "/bookstore?region=other" },
-  { title: "Ship Jaina Education Books – Special Books for USA only", link: "/bookstore?region=usa-special" },
+  { title: "Ship Jaina Education Books – in USA", link: "/buy-books/usa" },
+  { title: "Ship Jaina Education Books – in India", link: "/buy-books/india" },
+  { title: "Ship Jaina Education Books – in Other Countries", link: "/buy-books/other" },
+  { title: "Ship Jaina Education Books – Special Books for USA only", link: "/buy-books/usa-special" },
 ];
 
 const collectionBooks = [
