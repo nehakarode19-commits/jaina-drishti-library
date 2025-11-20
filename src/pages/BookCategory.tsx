@@ -77,7 +77,21 @@ const BookCategory = () => {
     }
   };
 
-  const handleAddToCart = (book: Book) => {
+  const handleAddToCart = async (book: Book) => {
+    // Check if user is authenticated
+    const { data: { session } } = await supabase.auth.getSession();
+    
+    if (!session) {
+      toast({
+        title: "Login Required",
+        description: "Please login to add items to your cart.",
+        variant: "destructive",
+      });
+      // Redirect to login with return URL
+      navigate(`/login?returnUrl=${encodeURIComponent(window.location.pathname)}`);
+      return;
+    }
+    
     addToCart({
       id: book.id,
       title: book.title,
