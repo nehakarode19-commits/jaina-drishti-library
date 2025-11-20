@@ -213,19 +213,19 @@ const Index = () => {
               </Link>
             </Button>
             <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
-              <Link to="/search?filter=authors">
+              <Link to="/authors">
                 <Users className="mr-2 h-5 w-5" />
                 Search By All Authors
               </Link>
             </Button>
             <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
-              <Link to="/search?filter=publishers">
+              <Link to="/publishers">
                 <Building2 className="mr-2 h-5 w-5" />
                 Search By All Publisher
               </Link>
             </Button>
             <Button asChild size="lg" className="h-12 bg-black-btn hover:bg-black-btn/90 text-white font-semibold shadow-md hover:shadow-lg transition-all">
-              <Link to="/search?sort=latest">
+              <Link to="/latest-downloads">
                 <TrendingUp className="mr-2 h-5 w-5" />
                 Latest Downloaded Books
               </Link>
