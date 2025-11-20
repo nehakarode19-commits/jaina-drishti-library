@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      book_requests: {
+        Row: {
+          author: string
+          book_name: string
+          created_at: string | null
+          email: string
+          id: string
+          language: string
+          pages: number | null
+          publisher: string | null
+          status: string | null
+          updated_at: string | null
+          user_id: string | null
+          year: string | null
+        }
+        Insert: {
+          author: string
+          book_name: string
+          created_at?: string | null
+          email: string
+          id?: string
+          language: string
+          pages?: number | null
+          publisher?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          year?: string | null
+        }
+        Update: {
+          author?: string
+          book_name?: string
+          created_at?: string | null
+          email?: string
+          id?: string
+          language?: string
+          pages?: number | null
+          publisher?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          year?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           city: string | null
@@ -44,6 +89,54 @@ export type Database = {
           last_name?: string | null
           phone?: string | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      upload_requests: {
+        Row: {
+          author: string
+          book_name: string
+          created_at: string | null
+          email: string
+          file_url: string | null
+          id: string
+          language: string
+          pages: number | null
+          publisher: string | null
+          status: string | null
+          updated_at: string | null
+          user_id: string | null
+          year: string | null
+        }
+        Insert: {
+          author: string
+          book_name: string
+          created_at?: string | null
+          email: string
+          file_url?: string | null
+          id?: string
+          language: string
+          pages?: number | null
+          publisher?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          year?: string | null
+        }
+        Update: {
+          author?: string
+          book_name?: string
+          created_at?: string | null
+          email?: string
+          file_url?: string | null
+          id?: string
+          language?: string
+          pages?: number | null
+          publisher?: string | null
+          status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          year?: string | null
         }
         Relationships: []
       }
