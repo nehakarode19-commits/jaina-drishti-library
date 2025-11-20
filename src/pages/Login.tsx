@@ -152,7 +152,8 @@ const Login = () => {
                     <div className="space-y-2">
                       <Label htmlFor="login-email">Email</Label>
                       <Input 
-                        id="login-email" 
+                        id="login-email"
+                        name="login-email"
                         type="email" 
                         placeholder="email@example.com" 
                         required 
@@ -161,7 +162,8 @@ const Login = () => {
                     <div className="space-y-2">
                       <Label htmlFor="login-password">Password</Label>
                       <Input 
-                        id="login-password" 
+                        id="login-password"
+                        name="login-password"
                         type="password" 
                         placeholder="Enter your password" 
                         required 
@@ -192,7 +194,8 @@ const Login = () => {
                       <div className="space-y-2">
                         <Label htmlFor="signup-first-name">First Name</Label>
                         <Input 
-                          id="signup-first-name" 
+                          id="signup-first-name"
+                          name="signup-first-name"
                           placeholder="First name" 
                           required 
                         />
@@ -200,7 +203,8 @@ const Login = () => {
                       <div className="space-y-2">
                         <Label htmlFor="signup-last-name">Last Name</Label>
                         <Input 
-                          id="signup-last-name" 
+                          id="signup-last-name"
+                          name="signup-last-name"
                           placeholder="Last name" 
                           required 
                         />
@@ -209,7 +213,8 @@ const Login = () => {
                     <div className="space-y-2">
                       <Label htmlFor="signup-email">Email</Label>
                       <Input 
-                        id="signup-email" 
+                        id="signup-email"
+                        name="signup-email"
                         type="email" 
                         placeholder="email@example.com" 
                         required 
@@ -218,7 +223,8 @@ const Login = () => {
                     <div className="space-y-2">
                       <Label htmlFor="signup-password">Password</Label>
                       <Input 
-                        id="signup-password" 
+                        id="signup-password"
+                        name="signup-password"
                         type="password" 
                         placeholder="Create a password" 
                         required 
@@ -227,7 +233,8 @@ const Login = () => {
                     <div className="space-y-2">
                       <Label htmlFor="signup-confirm-password">Confirm Password</Label>
                       <Input 
-                        id="signup-confirm-password" 
+                        id="signup-confirm-password"
+                        name="signup-confirm-password"
                         type="password" 
                         placeholder="Confirm your password" 
                         required 
