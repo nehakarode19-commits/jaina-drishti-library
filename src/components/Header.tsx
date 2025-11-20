@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Book, User, ShoppingCart } from "lucide-react";
+import { User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/contexts/CartContext";
+import logo from "@/assets/logo.png";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -20,7 +21,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <div className="flex items-center gap-2">
-            <Book className="h-8 w-8 text-white" />
+            <img src={logo} alt="Jain eLibrary Logo" className="h-12 w-auto" />
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold font-serif tracking-tight text-white">Jain eLibrary</span>
@@ -40,7 +41,7 @@ const Header = () => {
               <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-gold">
                 About Us
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white shadow-lg border border-border">
+              <NavigationMenuContent className="bg-white shadow-lg border border-border z-[100]">
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
                     <Link to="/about" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
@@ -65,7 +66,7 @@ const Header = () => {
               <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-gold">
                 Donation
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white shadow-lg border border-border">
+              <NavigationMenuContent className="bg-white shadow-lg border border-border z-[100]">
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
                     <Link to="/donate" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
@@ -80,11 +81,11 @@ const Header = () => {
               <NavigationMenuTrigger className="bg-transparent text-white hover:text-gold hover:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-gold">
                 Request
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white shadow-lg border border-border">
+              <NavigationMenuContent className="bg-white shadow-lg border border-border z-[100]">
                 <div className="w-48 p-2">
                   <NavigationMenuLink asChild>
                     <Link to="/request-book" className="block px-4 py-2 text-sm text-foreground hover:bg-secondary rounded-md transition-colors">
-                      Request New Book
+                      New Book Request
                     </Link>
                   </NavigationMenuLink>
                   <NavigationMenuLink asChild>
