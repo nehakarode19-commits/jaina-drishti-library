@@ -18,6 +18,7 @@ import ContactUs from "./pages/ContactUs";
 import Feedback from "./pages/Feedback";
 import RequestBook from "./pages/RequestBook";
 import RequestUpload from "./pages/RequestUpload";
+import BookCategory from "./pages/BookCategory";
 import CatalogueDetail from "./pages/CatalogueDetail";
 import NotFound from "./pages/NotFound";
 
@@ -36,6 +37,8 @@ const App = () => (
           <Route path="/advanced-search" element={<AdvancedSearch />} />
           <Route path="/book/:id" element={<BookDetail />} />
           <Route path="/bookstore" element={<Bookstore />} />
+          <Route path="/buy-books" element={<Bookstore />} />
+          <Route path="/buy-books/:slug" element={<BookCategory />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
