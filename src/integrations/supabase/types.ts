@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      book_categories: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          display_order: number | null
+          icon: string | null
+          id: string
+          is_active: boolean | null
+          name: string
+          slug: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          display_order?: number | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean | null
+          name: string
+          slug: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          display_order?: number | null
+          icon?: string | null
+          id?: string
+          is_active?: boolean | null
+          name?: string
+          slug?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       book_requests: {
         Row: {
           author: string
@@ -59,6 +95,77 @@ export type Database = {
         }
         Relationships: []
       }
+      books: {
+        Row: {
+          age_group: string | null
+          author: string | null
+          availability: string | null
+          category_id: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          language: string | null
+          pages: number | null
+          price: number
+          publisher: string | null
+          sku: string
+          stock_quantity: number | null
+          title: string
+          updated_at: string | null
+          year: number | null
+        }
+        Insert: {
+          age_group?: string | null
+          author?: string | null
+          availability?: string | null
+          category_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          language?: string | null
+          pages?: number | null
+          price: number
+          publisher?: string | null
+          sku: string
+          stock_quantity?: number | null
+          title: string
+          updated_at?: string | null
+          year?: number | null
+        }
+        Update: {
+          age_group?: string | null
+          author?: string | null
+          availability?: string | null
+          category_id?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          language?: string | null
+          pages?: number | null
+          price?: number
+          publisher?: string | null
+          sku?: string
+          stock_quantity?: number | null
+          title?: string
+          updated_at?: string | null
+          year?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "books_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "book_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       feedback: {
         Row: {
           created_at: string | null
@@ -90,6 +197,111 @@ export type Database = {
           message?: string
           name?: string
           status?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      order_items: {
+        Row: {
+          book_id: string | null
+          book_sku: string
+          book_title: string
+          created_at: string | null
+          id: string
+          order_id: string
+          quantity: number
+          total_price: number
+          unit_price: number
+        }
+        Insert: {
+          book_id?: string | null
+          book_sku: string
+          book_title: string
+          created_at?: string | null
+          id?: string
+          order_id: string
+          quantity: number
+          total_price: number
+          unit_price: number
+        }
+        Update: {
+          book_id?: string | null
+          book_sku?: string
+          book_title?: string
+          created_at?: string | null
+          id?: string
+          order_id?: string
+          quantity?: number
+          total_price?: number
+          unit_price?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "order_items_book_id_fkey"
+            columns: ["book_id"]
+            isOneToOne: false
+            referencedRelation: "books"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      orders: {
+        Row: {
+          created_at: string | null
+          customer_email: string
+          customer_name: string
+          id: string
+          notes: string | null
+          order_number: string
+          order_status: string | null
+          payment_method: string | null
+          payment_status: string | null
+          shipping_address: Json | null
+          shipping_cost: number | null
+          subtotal: number
+          total: number
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          customer_email: string
+          customer_name: string
+          id?: string
+          notes?: string | null
+          order_number: string
+          order_status?: string | null
+          payment_method?: string | null
+          payment_status?: string | null
+          shipping_address?: Json | null
+          shipping_cost?: number | null
+          subtotal: number
+          total: number
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          customer_email?: string
+          customer_name?: string
+          id?: string
+          notes?: string | null
+          order_number?: string
+          order_status?: string | null
+          payment_method?: string | null
+          payment_status?: string | null
+          shipping_address?: Json | null
+          shipping_cost?: number | null
+          subtotal?: number
+          total?: number
           updated_at?: string | null
           user_id?: string | null
         }
