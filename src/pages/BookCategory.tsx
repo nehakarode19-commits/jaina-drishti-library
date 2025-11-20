@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import { BookOpen, Grid, List } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useCart } from "@/contexts/CartContext";
 
 interface Book {
   id: string;
@@ -25,11 +26,11 @@ interface Category {
 const BookCategory = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { addToCart } = useCart();
   const [category, setCategory] = useState<Category | null>(null);
   const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [cart, setCart] = useState<{ [key: string]: number }>({});
 
   useEffect(() => {
     if (slug) {
@@ -76,15 +77,18 @@ const BookCategory = () => {
     }
   };
 
-  const addToCart = (bookId: string) => {
-    setCart((prev) => ({
-      ...prev,
-      [bookId]: (prev[bookId] || 0) + 1,
-    }));
+  const handleAddToCart = (book: Book) => {
+    addToCart({
+      id: book.id,
+      title: book.title,
+      price: book.price,
+      sku: book.sku,
+    });
     toast({
       title: "Added to Cart",
       description: "Book has been added to your cart.",
     });
+    navigate("/cart");
   };
 
   if (loading) {
@@ -195,7 +199,7 @@ const BookCategory = () => {
                         </p>
                       </div>
                       <Button
-                        onClick={() => addToCart(book.id)}
+                        onClick={() => handleAddToCart(book)}
                         disabled={book.stock_quantity === 0}
                         className="bg-[#5C5133] hover:bg-[#4A4129] text-white rounded-full px-6"
                       >
