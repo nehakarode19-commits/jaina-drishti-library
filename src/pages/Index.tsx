@@ -56,11 +56,12 @@ const categories = [
 ];
 
 const stats = [
-  { label: "Registered Users", value: "76,282", icon: Users },
-  { label: "From Countries", value: "234", icon: TrendingUp },
-  { label: "Total Visits", value: "3,046,881", icon: Search },
-  { label: "Files Downloaded", value: "1,786,547", icon: Download },
-  { label: "Files on Website", value: "38,571", icon: BookOpen },
+  { label: "Books", value: "70,282", icon: BookOpen },
+  { label: "PDFs", value: "334", icon: Download },
+  { label: "Total Users", value: "2,046,681", icon: Users },
+  { label: "Total Views", value: "1,786,947", icon: TrendingUp },
+  { label: "Donations", value: "38,571", icon: Heart },
+  { label: "Volunteers", value: "856", icon: Users },
 ];
 
 const educationBooks = [
@@ -140,37 +141,37 @@ const Index = () => {
 
             {/* Search Filter Buttons */}
             <div className="flex flex-wrap justify-center gap-2 pt-4">
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=title">Search By Title</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=author">Search By Author</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=category">Search by Category</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=keyword">Search By Keyword</Link>
               </Button>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=publisher">Search By Publisher</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=all">Search by All fields</Link>
               </Button>
             </div>
 
             <div className="flex flex-wrap justify-center gap-2">
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=quantum">Search By Quantum</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=agam">Search Agam</Link>
               </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
+              <Button asChild size="sm" variant="outline" className="rounded-full border-border/40 hover:bg-accent/10 hover:text-foreground hover:border-accent">
                 <Link to="/global-search?filter=ocr">Search OCR Content</Link>
               </Button>
             </div>
@@ -181,7 +182,7 @@ const Index = () => {
       {/* Stats Section */}
       <section className="py-12 border-y bg-background">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
@@ -374,10 +375,15 @@ const Index = () => {
                             <span>Total Pages: {catalogue.pages}</span>
                             <span>Down Count: {catalogue.downloads}</span>
                           </div>
+                          <div className="flex gap-2 pt-2">
+                            <Button asChild size="sm" className="bg-[#5B4912] hover:bg-[#6B5522] text-white rounded-full px-6">
+                              <Link to={catalogue.link}>View Details</Link>
+                            </Button>
+                            <Button asChild size="sm" className="bg-[#5B4912] hover:bg-[#6B5522] text-white rounded-full px-6">
+                              <Link to={catalogue.link}>View ebook</Link>
+                            </Button>
+                          </div>
                         </div>
-                        <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90 self-start shadow-sm hover:shadow-md transition-all">
-                          <Link to={catalogue.link}>View Details</Link>
-                        </Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -412,16 +418,16 @@ const Index = () => {
         <div className="container">
           <h2 className="text-3xl font-bold mb-10 text-center">Discover More from Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Button asChild size="lg" className="h-14 bg-primary hover:bg-primary/90 font-semibold text-base">
+            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
               <a href="https://jainqq.org" target="_blank" rel="noopener noreferrer">JainQQ</a>
             </Button>
-            <Button asChild size="lg" className="h-14 bg-primary hover:bg-primary/90 font-semibold text-base">
+            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
               <a href="https://jainart.com" target="_blank" rel="noopener noreferrer">JainArt</a>
             </Button>
-            <Button asChild size="lg" className="h-14 bg-primary hover:bg-primary/90 font-semibold text-base">
+            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
               <a href="https://jainsmsays.com" target="_blank" rel="noopener noreferrer">JainSm Says</a>
             </Button>
-            <Button asChild size="lg" className="h-14 bg-primary hover:bg-primary/90 font-semibold text-base">
+            <Button asChild size="lg" className="h-14 bg-[#6B7C5E] hover:bg-[#7A8C6D] text-white font-semibold text-base rounded-full">
               <a href="https://jainacademicbowl.com" target="_blank" rel="noopener noreferrer">Jain Academic Bowl</a>
             </Button>
           </div>
