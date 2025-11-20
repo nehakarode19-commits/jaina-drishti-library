@@ -171,9 +171,6 @@ const Index = () => {
                 <Link to="/global-search?filter=agam">Search Agam</Link>
               </Button>
               <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
-                <Link to="/global-search?filter=agam">Scriptures in Agam Search</Link>
-              </Button>
-              <Button asChild size="sm" variant="outline" className="rounded-full hover:bg-primary/10 hover:text-primary">
                 <Link to="/global-search?filter=ocr">Search OCR Content</Link>
               </Button>
             </div>
